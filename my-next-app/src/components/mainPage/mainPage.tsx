@@ -6,6 +6,7 @@ import style from './mainPage.module.css';
 import headphoneImg from '../../src/app/assets/component1.png';
 import speakersImg from '../../src/app/assets/component2.png';
 import earphonesImg from '../../src/app/assets/component3.png';
+import Link from "next/link";
 // import SpeakersComp from '../speakersComponent/speakersComp';
 // import { fetchOAuthToken, setCookies } from '../../lib/auth';
 
@@ -39,7 +40,9 @@ const MainPage = () => {
                         <h1>TECHERO SOUND</h1>
                         <p>Dive into an expansive soundstage that brings studio-quality realism to your daily listening.</p>
 
-                        <button className={style.seeProductBtn}>SEE OUR PRODUCTS</button>
+                        <button className={style.seeProductBtn}>
+                            <Link href="/all_products">SEE OUR PRODUCTS</Link>
+                        </button>
                         </div>
                     </div>
                 </div>
