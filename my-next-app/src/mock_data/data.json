@@ -1,0 +1,49 @@
+{
+  "store": "TECHERO SOUND",
+  "last_updated": "2023-10-25T14:30:00Z",
+  "inventory": [
+    {
+      "product_id": "ELEC-001",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X200",
+      "brand": "Sony",
+      "price": 129.99,
+      "currency": "USD",
+      "in_stock": true,
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "CLO-042",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X500",
+      "brand": "FashionCo",
+      "price": 119.99,
+      "in_stock": false,
+      "specifications": {
+        "color": "Black",
+        "battery_life_hours": 30,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "MOB-101",
+      "category": "Microphones",
+      "name": "Microphone PRO-Vocal bluety",
+      "brand": "Nature's Best",
+      "price": 105.99,
+      "in_stock": true,
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true
+      },
+      "warranty_months": 24
+    }
+  ]
+}
