@@ -194,7 +194,7 @@ useEffect(() => {
                 {currentProducts.length > 0 ? (
                   currentProducts.map((product) => (
                     <div key={product.product_id} className={style.productCard}>
-                      <Link href={`/catalogue/${product.product_id}`} id={product.product_id}>
+                      <Link href={`/products/${product.product_id}`} id={product.product_id}>
                         {product.image ? (
                           <Image
                             src={product.image}

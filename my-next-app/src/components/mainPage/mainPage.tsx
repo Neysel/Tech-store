@@ -41,7 +41,7 @@ const MainPage = () => {
                         <p>Dive into an expansive soundstage that brings studio-quality realism to your daily listening.</p>
 
                         <button className={style.seeProductBtn}>
-                            <Link href="/all_products">SEE OUR PRODUCTS</Link>
+                            <Link href="/products/all_products">SEE OUR PRODUCTS</Link>
                         </button>
                         </div>
                     </div>
