@@ -2,32 +2,44 @@
   width: 100%;
 }
 .section1 {
-  background-color: #131313;
+  position: relative;
+  background-color: black;
 }
 
-.section1SubDiv {
-  max-width: 1440px;
+.section1_wrapper {
   width: 100%;
+  /* height: 500px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url("../../src/app/assets/main.png");
+  background-image: url("../../..//assets/background_headphones/main.jpeg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: right 0 bottom 0;
-  padding: 9rem 0;
+  padding: 15rem 0 13rem 0;
 }
 
-.titleDescription {
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.main_content {
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  max-width: 398px;
+  max-width: 600px;
   width: 100%;
 }
 
-.titleDescription h1 {
+.section1_wrapper h1 {
   font-size: 56px;
   font-weight: 700;
   color: white;
@@ -44,8 +56,9 @@
 
 .seeProductBtn {
   color: white;
-  background-color: #d47b4c;
-  border: none;
+  background-color: #02b3ff;
+  border-radius: 120px;
+  /* border: none; */
   padding: 1rem 2rem;
   cursor: pointer;
   font-size: 1.02em;
@@ -53,7 +66,7 @@
 }
 
 .seeProductBtn:hover {
-  background-color: #d18d68;
+  background-color: #0285ff;
 }
 
 .section2 {
@@ -69,13 +82,13 @@
 }
 
 @media screen and (max-width: 1441px) {
-  .section1SubDiv {
+  .section1_wrapper {
     padding: 9rem 2rem;
   }
 }
 
 @media screen and (max-width: 798px) {
-  .section1SubDiv {
+  .section1_wrapper {
     justify-content: center;
     background-position: center;
     padding: 6rem 2rem;
@@ -92,11 +105,11 @@
 }
 
 @media screen and (max-width: 500px) {
-  .titleDescription h1 {
+  .main_content h1 {
     font-size: 38px;
   }
 
-  .titleDescription p {
+  .main_content p {
     font-size: 12px;
   }
 

@@ -8,10 +8,12 @@ import speakersImg from '../../src/app/assets/component2.png';
 import earphonesImg from '../../src/app/assets/component3.png';
 // import SpeakersComp from '../speakersComponent/speakersComp';
 // import { fetchOAuthToken, setCookies } from '../../lib/auth';
+
 interface MainPageProps {
     accessToken: {value: string} | null;
   }
-const MainPage: React.FC<MainPageProps> = ({accessToken}) => {
+
+const MainPage = () => {
     useEffect(() => {
         // const fetchAccessToken = async () => {
         //     if (!accessToken) {
@@ -26,19 +28,19 @@ const MainPage: React.FC<MainPageProps> = ({accessToken}) => {
 
         // fetchAccessToken();
         
-    }, [accessToken]);
+    });
 
     return (
         <div className={style.homePage}>
             <section className={style.section1}>
-                <div className={style.section1SubDiv}>
-                    <div className={style.titleDescription}>
-                        <p className={style.newProd}>NEW PRODUCT</p>
-                        <h1>XX99 MARK II HEADPHONES</h1>
-                        <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                <div className={style.section1_wrapper}>
+                    <div className={style.container}>
+                    <div className={style.main_content}>
+                        <h1>TECHERO SOUND</h1>
+                        <p>Dive into an expansive soundstage that brings studio-quality realism to your daily listening.</p>
 
-                        <button className={style.seeProductBtn}>SEE PRODUCT</button>
-                        <h2 className={style.promoCode}>Promo Code: HeadPhone345</h2>
+                        <button className={style.seeProductBtn}>SEE OUR PRODUCTS</button>
+                        </div>
                     </div>
                 </div>
             </section>
