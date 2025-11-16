@@ -1,0 +1,10 @@
+.headphones {
+    background-color: white;
+    color: black;
+    height: 100vh;
+}
+
+.componentWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}

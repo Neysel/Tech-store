@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import style from './headphones.module.css';
 import SideMenu from "../sideMenu/SideMenu";
@@ -65,12 +66,17 @@ function fetchProducts() {
   let totalPages: number = 1; 
   
     return (
-        <div className={style.headphones}>
-            <h2>Headphones Component</h2>
+    <div className={style.headphones}>
+            <h2>header</h2>
+            <h3>headphones component</h3>
             {/* Additional content and structure for the Headphones component can be added here */}
-                <div className={style.container}>
-      <div className={style.breadcrumbWrapper}>
-      </div>
+    
+    <div className={style.container}>
+        <div className={style.componentWrapper}>
+
+
+      {/* <div className={style.breadcrumbWrapper}>
+      </div> */}
       <SideMenu
         products={products}
         setFilteredProducts={setFilteredProducts}
@@ -98,6 +104,7 @@ function fetchProducts() {
             <option value="price-desc">Price: High to Low</option>
           </select>
         </div>
+        <div>products.....</div>
         {filtering && (
           <div id="product_grid" className={style.productGrid}>
             {currentProducts.map((product) => (
@@ -148,6 +155,9 @@ function fetchProducts() {
             ))}
           </div>
         )}
+        </div>
+
+        </div>
         <div className={style.pagination}>
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -169,8 +179,9 @@ function fetchProducts() {
             NEXT
           </button>
         </div>
-      </div>
-    </div>
+      
+ 
+            </div>
         </div>
     );
 }
