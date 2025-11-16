@@ -8,7 +8,8 @@ export default async function Home() {
       <div>
         {/* <MainPage accessToken={accessToken ? { value: accessToken.value } : null} /> */}
         <MainPage />
-        {/* http://localhost:3000/headphones */}
+        {/* http://localhost:3000/products/headphones */}
+        {/* http://localhost:3000/all_products   */}
       </div>
   );
 }

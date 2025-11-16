@@ -1,6 +1,6 @@
     "use client"
     import React, { useEffect, useState, useMemo } from "react";
-    import style from './headphones.module.css';
+    import style from './all_products.module.css';
     import SideMenu from "../sideMenu/SideMenu";
     import Link from "next/dist/client/link";
     import Image from "next/image";
@@ -8,7 +8,11 @@
     import { Product } from "../../interfaces/product";
 
 
-    const Headphones: React.FC = () => {
+interface AllProductsProps {
+  category?: string; // Add this line
+}
+
+    const all_products: React.FC<AllProductsProps > = ({ category }) => {
     const [products, setProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [filtering, setFiltering] = useState<boolean>(true);
@@ -44,7 +48,7 @@
 
         fetchData();
         fetchShoppingList();
-    }, []);
+    }, [category ]);
 
 
 // Calculate sorted and searched products
@@ -100,8 +104,19 @@ useEffect(() => {
     try {
       await new Promise(resolve => setTimeout(resolve, 500));
       
+
+
+      
       if (Array.isArray(mockData.inventory)) {
-          return mockData.inventory as Product[];
+          let filteredData = mockData.inventory; 
+
+             if (category) {
+          filteredData = mockData.inventory.filter(product => 
+            product.category.toLowerCase() === category.toLowerCase()
+          );
+        }
+
+          return filteredData as Product[];
       } 
       
       console.warn("Mock data structure not recognized, returning empty array");
@@ -131,7 +146,7 @@ useEffect(() => {
         return (
         <div className={style.headphones}>
                 <h2>header</h2>
-                <h3>headphones component</h3>
+                <h3>{category ? `${category}` : 'All Products'}</h3>
                 {/* Additional content and structure for the Headphones component can be added here */}
         
         <div className={style.container}>
@@ -251,4 +266,4 @@ useEffect(() => {
         );
     }
 
-    export default Headphones;
+    export default all_products;
