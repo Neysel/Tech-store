@@ -10,6 +10,8 @@
       "price": 129.99,
       "currency": "USD",
       "in_stock": true,
+      "image": "",
+      "description": "Experience high-fidelity sound with the ELECTRO-X200 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
       "specifications": {
         "color": "Black",
         "noise_cancellation": true,
@@ -24,6 +26,8 @@
       "brand": "FashionCo",
       "price": 119.99,
       "in_stock": false,
+      "image": "",
+      "description": "Stylish and comfortable headphones with superior sound quality, perfect for music lovers on the go.",
       "specifications": {
         "color": "Black",
         "battery_life_hours": 30,
@@ -39,6 +43,8 @@
       "brand": "Nature's Best",
       "price": 105.99,
       "in_stock": true,
+            "image": "",
+            "description": "Capture crystal-clear audio with the PRO-Vocal bluety microphone, designed for professional vocal recordings and live performances.",
       "specifications": {
         "color": "Black",
         "noise_cancellation": true
