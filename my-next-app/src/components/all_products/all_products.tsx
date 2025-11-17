@@ -23,6 +23,9 @@ interface AllProductsProps {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const itemsPerPage = 8;
 
+const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,6 +34,14 @@ interface AllProductsProps {
 
             setProducts(productsData);
             setFilteredProducts(productsData);
+
+          if (productsData.length > 0) {
+          const prices = productsData.map(p => p.price);
+          const minPrice = Math.min(...prices);
+          const maxPrice = Math.max(...prices);
+          setPriceRange([minPrice, maxPrice]);
+        }
+
              console.log("products", products);
         } catch (err: any) {
             setError(err.message);
@@ -63,7 +74,25 @@ let sortedAndSearchedProducts = React.useMemo(() => {
         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
+        // Apply price range filter
+    result = result.filter(product => 
+      product.price >= priceRange[0] && product.price <= priceRange[1]
+    );
     
+    // Apply brand filter
+    if (selectedBrands.length > 0) {
+      result = result.filter(product => 
+        selectedBrands.includes(product.brand)
+      );
+    }
+    
+    // Apply color filter
+    if (selectedColors.length > 0) {
+      result = result.filter(product => 
+        product.specifications?.color && selectedColors.includes(product.specifications.color)
+      );
+    }
+
     // Apply sorting
     if (sortOption) {
       switch (sortOption) {
@@ -155,12 +184,20 @@ useEffect(() => {
 
         {/* <div className={style.breadcrumbWrapper}>
         </div> */}
-        <SideMenu
+        {/* Updated SideMenu with all filter props */}
+          <SideMenu
             products={products}
-            setFilteredProducts={setFilteredProducts}
+            setFilteredProducts={() => {}}
             setFiltering={setFiltering}
-            searchQuery={searchQuery} // Pass searchQuery to SideMenu
-        />
+            searchQuery={searchQuery}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            selectedBrands={selectedBrands}
+            setSelectedBrands={setSelectedBrands}
+            selectedColors={selectedColors}
+            setSelectedColors={setSelectedColors}
+          />
+
         <div className={style.productsWrapper}>
             <div className={style.topBar}>
             <input
