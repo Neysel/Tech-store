@@ -8,6 +8,6 @@ import Link from 'next/link';
 
 import ProductItemPage from '../../all_products/product_item/page';
 
-export default function HeadphoneProductItemPage() {
+export default function Microphone_StandProductItemPage() {
 return (<ProductItemPage />);
 }
