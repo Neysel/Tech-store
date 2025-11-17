@@ -194,7 +194,18 @@ useEffect(() => {
                 {currentProducts.length > 0 ? (
                   currentProducts.map((product) => (
                     <div key={product.product_id} className={style.productCard}>
-                      <Link href={`/products/${product.product_id}`} id={product.product_id}>
+                      <Link 
+                        href={{
+                        pathname: '/products/all_products/product_item',
+                        query: { 
+                          id: product.product_id,
+                          category: category || 'all'
+                        }
+                        // http://localhost:3000/products/all_products/product_item?id=ELEC-001
+                      }}
+                       as={`/products/${category ? category.toLowerCase() : 'all_products'}/product_item?id=${product.product_id}`}
+                      
+                      id={product.product_id}>
                         {product.image ? (
                           <Image
                             src={product.image}
