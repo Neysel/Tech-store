@@ -6,6 +6,7 @@
     import Image from "next/image";
     import mockData from "../../mock_data/data.json";
     import { Product } from "../../interfaces/product";
+import { useDebounce } from "@/hooks/debounce";
 
 
 interface AllProductsProps {
@@ -25,6 +26,14 @@ interface AllProductsProps {
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
     const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
     const [selectedColors, setSelectedColors] = useState<string[]>([]);
+     const [isLoading, setIsLoading] = useState<boolean>(false);
+      const [showLoading, setShowLoading] = useState<boolean>(false); 
+
+    const debouncedSearchQuery = useDebounce(searchQuery, 2000);
+    const debouncedPriceRange = useDebounce(priceRange, 2000);
+    const debouncedSelectedBrands = useDebounce(selectedBrands, 2000);
+    const debouncedSelectedColors = useDebounce(selectedColors, 2000);
+    const debouncedSortOption = useDebounce(sortOption, 2000);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -60,61 +69,83 @@ interface AllProductsProps {
 
         fetchData();
         fetchShoppingList();
-    }, [category ]);
+    }, [category]);
 
+        // Show loading when debounced values change
+    useEffect(() => {
+        setShowLoading(true);
+        setIsLoading(true);
+    }, [debouncedSearchQuery, debouncedPriceRange, debouncedSelectedBrands, debouncedSelectedColors, debouncedSortOption]);
 
 // Calculate sorted and searched products
-  useEffect(() => {
-    let result = [...products];
-    
-    // Apply all filters (same logic as before)
-    if (searchQuery) {
-      result = result.filter(product =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
-      );
-    }
-    
-    result = result.filter(product => 
-      product.price >= priceRange[0] && product.price <= priceRange[1]
-    );
-    
-    if (selectedBrands.length > 0) {
-      result = result.filter(product => 
-        selectedBrands.includes(product.brand)
-      );
-    }
-    
-    if (selectedColors.length > 0) {
-      result = result.filter(product => 
-        product.specifications?.color && selectedColors.includes(product.specifications.color)
-      );
-    }
+    useEffect(() => {
+        let result = [...products];
+        
+        // Apply search filter
+        if (debouncedSearchQuery) {
+            result = result.filter(product =>
+                product.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) ||
+                product.brand.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) ||
+                (product.description && product.description.toLowerCase().includes(debouncedSearchQuery.toLowerCase()))
+            );
+        }
+        
+        // Apply price range filter
+        result = result.filter(product => 
+            product.price >= debouncedPriceRange[0] && product.price <= debouncedPriceRange[1]
+        );
+        
+        // Apply brand filter
+        if (debouncedSelectedBrands.length > 0) {
+            result = result.filter(product => 
+                debouncedSelectedBrands.includes(product.brand)
+            );
+        }
+        
+        // Apply color filter
+        if (debouncedSelectedColors.length > 0) {
+            result = result.filter(product => 
+                product.specifications?.color && debouncedSelectedColors.includes(product.specifications.color)
+            );
+        }
 
-    // Apply sorting
-    if (sortOption) {
-      switch (sortOption) {
-        case "name-asc":
-          result.sort((a, b) => a.name.localeCompare(b.name));
-          break;
-        case "name-desc":
-          result.sort((a, b) => b.name.localeCompare(a.name));
-          break;
-        case "price-asc":
-          result.sort((a, b) => a.price - b.price);
-          break;
-        case "price-desc":
-          result.sort((a, b) => b.price - a.price);
-          break;
-        default:
-          break;
-      }
-    }
-    
-    setFilteredProducts(result);
-    setCurrentPage(1);
-  }, [products, searchQuery, sortOption, priceRange, selectedBrands, selectedColors]);
+        // Apply sorting
+        if (debouncedSortOption) {
+            switch (debouncedSortOption) {
+                case "name-asc":
+                    result.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case "name-desc":
+                    result.sort((a, b) => b.name.localeCompare(a.name));
+                    break;
+                case "price-asc":
+                    result.sort((a, b) => a.price - b.price);
+                    break;
+                case "price-desc":
+                    result.sort((a, b) => b.price - a.price);
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        // Set a minimum display time for loading animation (500ms)
+        const timer = setTimeout(() => {
+            setFilteredProducts(result);
+            setCurrentPage(1);
+            setIsLoading(false);
+            setShowLoading(false);
+        }, 500); // Minimum 500ms loading display
+        
+        return () => clearTimeout(timer);
+    }, [
+        products, 
+        debouncedSearchQuery, 
+        debouncedSortOption, 
+        debouncedPriceRange, 
+        debouncedSelectedBrands, 
+        debouncedSelectedColors
+    ]);
 
   // Pagination calculations
     const { currentProducts, totalPages } = useMemo(() => {
@@ -218,10 +249,30 @@ interface AllProductsProps {
             </div>
 
             {/* <div>products.....</div> */}
-
+            {isLoading ? (
+  <div>
+    <div className={style.loadingContainer}>
+      <div className={style.loadingSpinner}></div>
+      <div className={style.loadingText}>Applying filters...</div>
+    </div>
+    <div className={style.skeletonGrid}>
+      {[...Array(8)].map((_, index) => (
+        <div key={index} className={style.skeletonCard}>
+          <div className={style.skeletonImage}></div>
+          <div className={`${style.skeletonText} ${style.skeletonTextShort}`}></div>
+          <div className={`${style.skeletonText} ${style.skeletonTextMedium}`}></div>
+          <div className={`${style.skeletonText} ${style.skeletonTextShort}`}></div>
+          <div className={style.skeletonButton}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+)  : ( 
+              <div>
               {searchQuery && (
                 <span> matching "{searchQuery}"</span>
               )}
+            
 
             {filtering && (
               <div id="product_grid" className={style.productGrid}>
@@ -279,7 +330,12 @@ interface AllProductsProps {
                   </div>
                 )}
               </div>
+              
+            ) }
+
+              </div>
             )}
+
             </div>
 
             </div>
@@ -312,3 +368,4 @@ interface AllProductsProps {
     }
 
     export default all_products;
+
