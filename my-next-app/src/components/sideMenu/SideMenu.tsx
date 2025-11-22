@@ -8,7 +8,7 @@ interface SideMenuProps {
   setFilteredProducts: (products: Product[]) => void;
   setFiltering: (filtering: boolean) => void;
   searchQuery: string;
-  // Add new props for filtering
+  // New props for filtering
   priceRange: [number, number];
   setPriceRange: (range: [number, number]) => void;
   selectedBrands: string[];
@@ -20,9 +20,6 @@ interface SideMenuProps {
 const SideMenu: React.FC<SideMenuProps> = (props) => {
   const {
     products,
-    setFilteredProducts,
-    setFiltering,
-    searchQuery,
     priceRange,
     setPriceRange,
     selectedBrands,
@@ -31,8 +28,18 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     setSelectedColors
   } = props;
 
-  console.log("SideMenu props:", props);
+   // Refs for the slider elements
+  let sliderOneRef = React.useRef<HTMLInputElement>(null);
+  let sliderTwoRef = React.useRef<HTMLInputElement>(null);
+  let displayValOneRef = React.useRef<HTMLSpanElement>(null);
+  let displayValTwoRef = React.useRef<HTMLSpanElement>(null);
+  let sliderTrackRef = React.useRef<HTMLDivElement>(null);
+  let [sliderValues, setSliderValues] = React.useState<[number, number]>([30, 300]);
+  let minGap = 0;
+  let sliderMaxValue = 300;
 
+
+  
   // Get unique brands and colors from products
   const brands = React.useMemo(() => {
     return Array.from(new Set(products.map(product => product.brand))).sort();
@@ -45,14 +52,10 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     return Array.from(new Set(allColors)).sort();
   }, [products]);
 
+
   // Get min and max price from products
   const priceStats = React.useMemo(() => {
-    if (products.length === 0) return { min: 0, max: 1000 };
-    const prices = products.map(p => p.price);
-    return {
-      min: Math.min(...prices),
-      max: Math.max(...prices)
-    };
+    return { min: 0, max: 300 };
   }, [products]);
 
   // Handle brand selection
@@ -71,10 +74,72 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     setSelectedColors(newColors);
   };
 
-  // Handle price range change
-  const handlePriceRangeChange = (min: number, max: number) => {
-    setPriceRange([min, max]);
+  // Handle min price change
+  const handleMinPriceChange = (min: number) => {
+    setPriceRange([min, priceRange[1]]);
   };
+
+  // Handle max price change
+  const handleMaxPriceChange = (max: number) => {
+    setPriceRange([priceRange[0], max]);
+  };
+
+  // Handle slider change
+  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>, type: 'min' | 'max') => {
+    const value = Number(event.target.value);
+    if (type === 'min') {
+      setPriceRange([value, priceRange[1]]);
+    } else {
+      setPriceRange([priceRange[0], value]);
+    }
+  };
+
+  /////////////////////////
+  // Double range slider functions
+  /////////////////////////
+  
+  const slideOne = React.useCallback((value: number) => {
+    if (sliderValues[1] - value <= minGap) {
+      const newMin = sliderValues[1] - minGap;
+      setSliderValues([newMin, sliderValues[1]]);
+    } else {
+      setSliderValues([value, sliderValues[1]]);
+    }
+  }, [sliderValues]);
+
+  const slideTwo = React.useCallback((value: number) => {
+    if (value - sliderValues[0] <= minGap) {
+      const newMax = sliderValues[0] + minGap;
+      setSliderValues([sliderValues[0], newMax]);
+    } else {
+      setSliderValues([sliderValues[0], value]);
+    }
+  }, [sliderValues]);
+
+  const fillColor = React.useCallback(() => {
+    if (!sliderTrackRef.current) return;
+    
+    const percent1 = (sliderValues[0] / sliderMaxValue) * 100;
+    const percent2 = (sliderValues[1] / sliderMaxValue) * 100;
+    sliderTrackRef.current.style.height = `5px`
+    sliderTrackRef.current.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+
+  }, [sliderValues]);
+
+
+ // Update display values and fill color when slider values change
+  React.useEffect(() => {
+    if (displayValOneRef.current) {
+      displayValOneRef.current.textContent = sliderValues[0].toString();
+    }
+    if (displayValTwoRef.current) {
+      displayValTwoRef.current.textContent = sliderValues[1].toString();
+    }
+    fillColor();
+  }, [sliderValues, fillColor]);
+
+;
+
 
   // Clear all filters
   const clearFilters = () => {
@@ -84,52 +149,106 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
   };
 
   return (
-    <div className="side-menu">
+    <div className={style.sideMenu}>
       <h2>Filters</h2>
       
       {/* Price Range Filter */}
-      <div className="filter-section">
-        <h3>Price Range</h3>
-        <div className="price-inputs">
-          <input
-            type="number"
-            value={priceRange[0]}
-            onChange={(e) => handlePriceRangeChange(Number(e.target.value), priceRange[1])}
-            min={priceStats.min}
-            max={priceStats.max}
-            className="price-input"
+      <div className={style.filterSection}>
+        {/* <h3>Price Range</h3> */}
+  <div className={style.wrapper}>
+        <div className={style.values}>
+          <div> MIN : <span ref={displayValOneRef}>{sliderValues[0]}</span>
+          <span>$</span></div>
+
+          {/* <span>–</span> */}
+          <div> MAX : <span ref={displayValTwoRef}>{sliderValues[1]}</span>
+          <span>$</span>
+          </div>
+
+        </div>
+
+        <div className={`${style.container_slider}`}>
+          <div className={`${style.sliderTrack} ${style.sliderContainer}`}  ref={sliderTrackRef}></div>
+          <input 
+            type="range" 
+             min={priceStats.min}
+            max={priceStats.max} 
+            // value={sliderValues[0]} 
+            value={sliderValues[0]}
+            ref={sliderOneRef}
+            onChange={(e) => 
+              {
+                slideOne(Number(e.target.value));handleSliderChange(e, 'min');
+              }}
+            className={`${style.sliderInput} ${style.priceSlider}`}
           />
-          <span> - </span>
-          <input
-            type="number"
-            value={priceRange[1]}
-            onChange={(e) => handlePriceRangeChange(priceRange[0], Number(e.target.value))}
+          <input 
+            type="range" 
             min={priceStats.min}
             max={priceStats.max}
-            className="price-input"
+            value={sliderValues[1]} 
+            ref={sliderTwoRef}
+            onChange={(e) => {
+              slideTwo(Number(e.target.value));
+              handleSliderChange(e, 'max');
+            }}
+            className={`${style.sliderInput} ${style.priceSlider}`}
           />
         </div>
-        <input
-          type="range"
-          min={priceStats.min}
-          max={priceStats.max}
-          value={priceRange[1]}
-          onChange={(e) => handlePriceRangeChange(priceRange[0], Number(e.target.value))}
-          className="price-slider"
-        />
+      </div>
+        <div className={style.priceInputs}>
+          <input
+            type="number"
+            // value={priceRange[0]}
+            value={sliderValues[0]}
+            onChange={(e) => handleMinPriceChange(Number(e.target.value))}
+            min={priceStats.min}
+            max={priceStats.max}
+            className={style.priceInput}
+          />
+          <input
+            type="number"
+            // value={priceRange[1]}
+            value={sliderValues[1]}
+            onChange={(e) => handleMaxPriceChange(Number(e.target.value))}
+            min={priceStats.min}
+            max={priceStats.max}
+            className={style.priceInput}
+          />
+        </div>
+        {/* <div className={style.sliderContainer}>
+          <label>Min: ${priceRange[0]}</label>
+          <input
+            type="range"
+            min={priceStats.min}
+            max={priceStats.max}
+            value={priceRange[0]}
+            onChange={(e) => handleSliderChange(e, 'min')}
+            className={style.priceSlider}
+          />
+          <label>Max: ${priceRange[1]}</label>
+          <input
+            type="range"
+            min={priceStats.min}
+            max={priceStats.max}
+            value={priceRange[1]}
+            onChange={(e) => handleSliderChange(e, 'max')}
+            className={style.priceSlider}
+          />
+        </div> */}
       </div>
 
       {/* Brand Filter */}
-      <div className="filter-section">
+      <div className={style.filterSection}>
         <h3>Brands</h3>
-        <div className="checkbox-group">
+        <div className={style.checkboxGroup}>
           {brands.map(brand => (
-            <label key={brand} className="checkbox-label">
+            <label key={brand} className={style.checkboxLabel}>
               <input
                 type="checkbox"
                 checked={selectedBrands.includes(brand)}
                 onChange={() => handleBrandChange(brand)}
-                className="checkbox-input"
+                className={style.checkboxInput}
               />
               {brand}
             </label>
@@ -139,16 +258,16 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
 
       {/* Color Filter */}
       {colors.length > 0 && (
-        <div className="filter-section">
+        <div className={style.filterSection}>
           <h3>Colors</h3>
-          <div className="checkbox-group">
+          <div className={style.checkboxGroup}>
             {colors.map(color => (
-              <label key={color} className="checkbox-label">
+              <label key={color} className={style.checkboxLabel}>
                 <input
                   type="checkbox"
                   checked={selectedColors.includes(color)}
                   onChange={() => handleColorChange(color)}
-                  className="checkbox-input"
+                  className={style.checkboxInput}
                 />
                 {color}
               </label>
@@ -157,8 +276,14 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
         </div>
       )}
 
+  {/* Double Range Slider Test */} 
+    
+
+        
+
+
       {/* Clear Filters Button */}
-      <button onClick={clearFilters} className="clear-filters-btn">
+      <button onClick={clearFilters} className={style.clearFiltersBtn}>
         Clear All Filters
       </button>
     </div>

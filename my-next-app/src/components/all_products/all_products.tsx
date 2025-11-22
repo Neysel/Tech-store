@@ -2,7 +2,7 @@
     import React, { useEffect, useState, useMemo } from "react";
     import style from './all_products.module.css';
     import SideMenu from "../sideMenu/SideMenu";
-    import Link from "next/dist/client/link";
+    import Link from "next/link";
     import Image from "next/image";
     import mockData from "../../mock_data/data.json";
     import { Product } from "../../interfaces/product";
@@ -22,15 +22,16 @@ interface AllProductsProps {
     const [shoppingList, setShoppingList] = useState<any[]>([]); // State to store the shopping list
     const [currentPage, setCurrentPage] = useState<number>(1);
     const itemsPerPage = 8;
-
-const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+    const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
+    const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+    const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
         try {
             const productsData = await fetchProducts();
+
+            console.log("Fetched products data:", productsData);
 
             setProducts(productsData);
             setFilteredProducts(productsData);
@@ -63,10 +64,10 @@ const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
 
 
 // Calculate sorted and searched products
-let sortedAndSearchedProducts = React.useMemo(() => {
+  useEffect(() => {
     let result = [...products];
     
-    // Apply search filter
+    // Apply all filters (same logic as before)
     if (searchQuery) {
       result = result.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -74,19 +75,17 @@ let sortedAndSearchedProducts = React.useMemo(() => {
         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
-        // Apply price range filter
+    
     result = result.filter(product => 
       product.price >= priceRange[0] && product.price <= priceRange[1]
     );
     
-    // Apply brand filter
     if (selectedBrands.length > 0) {
       result = result.filter(product => 
         selectedBrands.includes(product.brand)
       );
     }
     
-    // Apply color filter
     if (selectedColors.length > 0) {
       result = result.filter(product => 
         product.specifications?.color && selectedColors.includes(product.specifications.color)
@@ -113,21 +112,19 @@ let sortedAndSearchedProducts = React.useMemo(() => {
       }
     }
     
-    return result;
-  }, [products, searchQuery, sortOption]);
-    
-
-// Update filtered products when sortedAndSearchedProducts changes
-useEffect(() => {
-    setFilteredProducts(sortedAndSearchedProducts);
-    setCurrentPage(1); // Reset to first page when filters change
-  }, [sortedAndSearchedProducts]);
+    setFilteredProducts(result);
+    setCurrentPage(1);
+  }, [products, searchQuery, sortOption, priceRange, selectedBrands, selectedColors]);
 
   // Pagination calculations
-  let indexOfLastItem = currentPage * itemsPerPage;
-  let indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  let currentProducts = sortedAndSearchedProducts.slice(indexOfFirstItem, indexOfLastItem);
-  let totalPages = Math.ceil(sortedAndSearchedProducts.length / itemsPerPage);
+    const { currentProducts, totalPages } = useMemo(() => {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    
+    return { currentProducts, totalPages };
+  }, [filteredProducts, currentPage, itemsPerPage]);
 
   async function fetchProducts(): Promise<Product[]> {
     try {
