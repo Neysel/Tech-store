@@ -7,6 +7,7 @@
     import mockData from "../../mock_data/data.json";
     import { Product } from "../../interfaces/product";
 import { useDebounce } from "@/hooks/debounce";
+import Header from "../header/Header";
 
 
 interface AllProductsProps {
@@ -29,11 +30,11 @@ interface AllProductsProps {
      const [isLoading, setIsLoading] = useState<boolean>(false);
       const [showLoading, setShowLoading] = useState<boolean>(false); 
 
-    const debouncedSearchQuery = useDebounce(searchQuery, 2000);
-    const debouncedPriceRange = useDebounce(priceRange, 2000);
-    const debouncedSelectedBrands = useDebounce(selectedBrands, 2000);
-    const debouncedSelectedColors = useDebounce(selectedColors, 2000);
-    const debouncedSortOption = useDebounce(sortOption, 2000);
+    const debouncedSearchQuery = useDebounce(searchQuery, 700);
+    const debouncedPriceRange = useDebounce(priceRange, 700);
+    const debouncedSelectedBrands = useDebounce(selectedBrands, 700);
+    const debouncedSelectedColors = useDebounce(selectedColors, 700);
+    const debouncedSortOption = useDebounce(sortOption, 700);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -80,6 +81,7 @@ interface AllProductsProps {
 // Calculate sorted and searched products
     useEffect(() => {
         let result = [...products];
+   
         
         // Apply search filter
         if (debouncedSearchQuery) {
@@ -202,7 +204,7 @@ interface AllProductsProps {
     
         return (
         <div className={style.headphones}>
-                <h2>header</h2>
+                <Header/>
                 <h3>{category ? `${category}` : 'All Products'}</h3>
                 {/* Additional content and structure for the Headphones component can be added here */}
         
