@@ -23,7 +23,7 @@ const Register = () => {
     // Redirect if already logged in
     React.useEffect(() => {
         if (isLoggedIn) {
-            router.push('/'); // Redirect to home page
+            router.push('/login'); // Redirect to home page
         }
     }, [isLoggedIn, router]);
 
@@ -49,9 +49,9 @@ const Register = () => {
     return ( <>
         <Header/>
         <div className={style.register}>
-            <form action="" className={style.form_register}>
+            <form onSubmit={handleSubmit} className={style.form_register}>
                 <h2 className={style.title}>Register</h2>
-
+                 {error && <div className={style.errorMessage}>{error}</div>}
                <div className={style.form_register_all_input}>
                         <label htmlFor="username">Login</label>
                         <input 

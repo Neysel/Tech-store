@@ -2,11 +2,28 @@
 import Link from 'next/link';
 import * as React from 'react';
 import style from './Header.module.css';
-
+import { useAppSelector } from '@/hooks/hooks';
+import router from 'next/navigation';
+import { useAppDispatch } from '@/hooks/redux';
+import { checkAuth, logout } from '@/features/auth/authSlice';
+import { useEffect } from 'react';
 
 
 const Header = () => {
-    let isLoggedIn = false;
+     const dispatch = useAppDispatch();
+     const { isLoggedIn } = useAppSelector((state) => state.auth);
+    // let isLoggedIn = false;
+
+    useEffect(() => {
+    // Check auth when header loads
+    dispatch(checkAuth());
+  }, [dispatch]);
+
+//   function ourlogOut() {
+
+    //  router.push()
+//   }
+
     return ( 
         <div>
             <div className={style.header_wrapper}>
@@ -42,11 +59,11 @@ const Header = () => {
                         </button>
                         </Link>
 
-                        <Link href="/logout">
+                        <div onClick={() => dispatch(logout())}>
                         <button className={style.header_btn}>
                             Logout
                         </button>
-                        </Link>
+                        </div>
                         </>
 
                 ) : (

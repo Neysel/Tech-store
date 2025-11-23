@@ -80,6 +80,7 @@ const authSlice = createSlice({
       state.currentUser = null;
       state.isLoggedIn = false;
       state.error = null;
+      localStorage.removeItem('techero_current_user');
     },
 
     // Clear error
@@ -89,13 +90,11 @@ const authSlice = createSlice({
 
     // Check if user is logged in (for page refresh)
     checkAuth: (state) => {
-      if (typeof window !== 'undefined') {
         const storedUser = localStorage.getItem('techero_current_user');
         if (storedUser) {
           state.currentUser = JSON.parse(storedUser);
           state.isLoggedIn = true;
         }
-      }
     },
   },
 });

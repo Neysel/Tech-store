@@ -19,15 +19,16 @@ const Login = () => {
         password: '',
     });
 
-      // Redirect if already logged in
-    // useEffect(() => {
-    //     if (isLoggedIn) {
-    //         router.push('/products/all_products'); // Redirect to home page
-    //     }
-    // }, [isLoggedIn, router]);
-
-    // Clear error when component unmounts or form changes
+    //   Redirect if already logged in
     useEffect(() => {
+        if (isLoggedIn) {
+            router.push('/products/all_products'); // Redirect to home page
+        }
+    }, [isLoggedIn, router]);
+
+    // Error 
+    useEffect(() => {
+        console.log(error)
         return () => {
             dispatch(clearError());
         };
@@ -35,6 +36,7 @@ const Login = () => {
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+         console.log('error submit', error)
         dispatch(clearError());
         dispatch(loginUser(formData));
     }
@@ -46,17 +48,13 @@ const Login = () => {
         });
     }
 
-    function checkHaveAccount() {
-        
-    }
-        
-
 
     return ( <>
         <Header/>
         <div className={style.login}>
             <form onSubmit={handleSubmit} className={style.form_login}>
                 <h2 className={style.title}>Login</h2>
+                {error && <div className={style.errorMessage}>{error}</div>}
                 <div className={style.form_login_all_input}>
                     <label htmlFor="username">Email or Login:</label>
                      <input 
