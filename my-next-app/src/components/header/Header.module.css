@@ -1,0 +1,46 @@
+.header_wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    align-items: center ;
+    color: white;
+    background-color: black;
+}
+
+.user_links {
+    display: flex;
+    gap: 40px;
+}
+
+.header_wrapper Link {
+    /* border-radius: 5px; */
+}
+
+.header_btn {
+    cursor: pointer;
+    transition: all 0.3s ;
+}
+
+.header_btn:hover {
+    color: #02b3ff;
+    /* text-decoration: underline; */
+     transition: all 0.3s ;
+}
+
+.header_btn_blue {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: #02b3ff;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.3s ;
+}
+
+.header_btn_blue:hover {
+  background-color: #0285ff;
+}
+
+

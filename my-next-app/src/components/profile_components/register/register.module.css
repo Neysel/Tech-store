@@ -1,0 +1,90 @@
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: #dcdcdc;
+}
+.register {
+    margin: 20px auto 50px auto;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: white;
+
+}
+
+.form_register {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 400px;
+    margin: 0  auto;
+}
+
+.form_register input {
+    padding: 5px 10px;
+    font-size: large;
+    border: 2px solid #02b3ff;
+    border-radius: 5px;
+}
+
+.form_register input:focus {
+      border-color:#0285ff;
+      outline: none;
+}
+
+.form_register_all_input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.form_btn {
+    width: 170px;
+    height: 40px;
+    font-size: large;
+    color: white;
+    background-color: #02b3ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ;
+}
+
+.lower_section {
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: space-between;
+}
+.register_btn:hover {
+    transition: all 0.3s ;
+     color:#0285ff;
+}
+
+.errorMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+}
+
+/* Optional: Add disabled state styling */
+input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

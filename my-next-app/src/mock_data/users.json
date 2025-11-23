@@ -1,0 +1,21 @@
+{
+     "store": "TECHERO SOUND",
+     "users": [
+         {
+             "user_id": "USR-001",
+             "username": "john_doe",
+             "name": "john_doe",
+             "last_name": "Doe",
+             "email": "john_doe@example.com",
+             "password": "securepassword123"
+            },
+            {
+            "user_id": "USR-002",
+            "username": "jane_smith",
+            "name": "jane_smith",
+            "last_name": "Smith",
+            "email": "jane_smith@example.com",
+            "password": "anothersecurepassword456"
+            }
+        ]
+}

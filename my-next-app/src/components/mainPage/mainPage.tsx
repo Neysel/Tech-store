@@ -42,10 +42,11 @@ const MainPage = () => {
                     <div className={style.main_content}>
                         <h1>TECHERO SOUND</h1>
                         <p>Dive into an expansive soundstage that brings studio-quality realism to your daily listening.</p>
-
+                    <Link href="/products/all_products">
                         <button className={style.seeProductBtn}>
-                            <Link href="/products/all_products">SEE OUR PRODUCTS</Link>
+                            SEE OUR PRODUCTS
                         </button>
+                        </Link>
                         </div>
                     </div>
                 </div>
