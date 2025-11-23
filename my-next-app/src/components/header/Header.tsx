@@ -19,11 +19,6 @@ const Header = () => {
     dispatch(checkAuth());
   }, [dispatch]);
 
-//   function ourlogOut() {
-
-    //  router.push()
-//   }
-
     return ( 
         <div>
             <div className={style.header_wrapper}>
@@ -53,11 +48,13 @@ const Header = () => {
                 <div className={style.user_links}>
                 {isLoggedIn ? (
                         <>
+                        <div>
                         <Link href="/profile">
                         <button className={style.header_btn}>
                             Profile
                         </button>
                         </Link>
+                        </div>
 
                         <div onClick={() => dispatch(logout())}>
                         <button className={style.header_btn}>

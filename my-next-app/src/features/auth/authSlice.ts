@@ -96,6 +96,18 @@ const authSlice = createSlice({
           state.isLoggedIn = true;
         }
     },
+    updateProfile: (state, action: PayloadAction<{username: string; name: string; last_name: string; email: string}>) => {
+  if (state.currentUser) {
+    state.currentUser = {
+      ...state.currentUser,
+      ...action.payload
+    };
+    // Update localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('techero_current_user', JSON.stringify(state.currentUser));
+    }
+  }
+},
   },
 });
 
@@ -172,7 +184,8 @@ export const {
   registerFailure, 
   logout, 
   clearError,
-  checkAuth 
+  checkAuth,
+  updateProfile
 } = authSlice.actions;
 
 export default authSlice.reducer;

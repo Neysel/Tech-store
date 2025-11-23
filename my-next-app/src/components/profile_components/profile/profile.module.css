@@ -1,0 +1,301 @@
+/* Profile Page Layout */
+.profilePage {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 30px;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #5f5f5f, #ffffff); */
+    background-color: rgb(0, 0, 0);
+    padding: 30px;
+    color: #dcdcdc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebars */
+.sidebar, .rightSidebar {
+    background: rgba(43, 43, 43, 0.8);
+    border: 2px solid #02b3ff;
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(2, 179, 255, 0.2);
+    height: fit-content;
+    position: sticky;
+    top: 30px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.navLink {
+    padding: 15px 20px;
+    background: rgba(2, 179, 255, 0.1);
+    border: 1px solid rgba(2, 179, 255, 0.3);
+    border-radius: 10px;
+    color: #dcdcdc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.navLink:hover {
+    background: #02b3ff;
+    color: #2b2b2b;
+    box-shadow: 0 0 20px rgba(2, 179, 255, 0.5);
+    transform: translateX(5px);
+}
+
+/* Main Content */
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profileCard {
+    background: rgba(43, 43, 43, 0.9);
+    border: 3px solid #02b3ff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 
+        0 0 40px rgba(2, 179, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Profile Header */
+.profileHeader {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(2, 179, 255, 0.3);
+}
+
+.avatar {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px #02b3ff);
+}
+
+.profileName {
+    color: #02b3ff;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    text-shadow: 0 0 15px rgba(2, 179, 255, 0.5);
+}
+
+.profileTitle {
+    color: #dcdcdc;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Form Styles */
+.profileForm {
+    width: 100%;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #02b3ff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid #02b3ff;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #dcdcdc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(2, 179, 255, 0.5);
+    background: rgba(26, 26, 26, 1);
+}
+
+.displayValue {
+    background: rgba(26, 26, 26, 0.5);
+    border: 2px solid rgba(2, 179, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #dcdcdc;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.editButton, .saveButton, .cancelButton {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.editButton {
+    background: linear-gradient(45deg, #02b3ff, #00a1e0);
+    color: #2b2b2b;
+    box-shadow: 0 0 20px rgba(2, 179, 255, 0.4);
+}
+
+.editButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(2, 179, 255, 0.6);
+}
+
+.saveButton {
+    background: linear-gradient(45deg, #00ff88, #00e076);
+    color: #2b2b2b;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.saveButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+}
+
+.cancelButton {
+    background: linear-gradient(45deg, #ff2b2b, #e02626);
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 43, 43, 0.4);
+}
+
+.cancelButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(255, 43, 43, 0.6);
+}
+
+/* Right Sidebar Content */
+.statsCard, .quickActions {
+    margin-bottom: 25px;
+}
+
+.statsCard h3, .quickActions h3 {
+    color: #02b3ff;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(2, 179, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.statItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.1);
+}
+
+.statItem:last-child {
+    border-bottom: none;
+}
+
+.statItem strong {
+    color: #02b3ff;
+    font-size: 1.1rem;
+}
+
+.actionLink {
+    display: block;
+    padding: 12px 15px;
+    background: rgba(2, 179, 255, 0.1);
+    border: 1px solid rgba(2, 179, 255, 0.3);
+    border-radius: 8px;
+    color: #dcdcdc;
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.actionLink:hover {
+    background: #02b3ff;
+    color: #2b2b2b;
+    box-shadow: 0 0 15px rgba(2, 179, 255, 0.4);
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #02b3ff;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .profilePage {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .sidebar, .rightSidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .mainContent {
+        order: 1;
+    }
+    
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .profileCard {
+        padding: 25px;
+    }
+    
+    .profileName {
+        font-size: 2rem;
+    }
+    
+    .buttonGroup {
+        flex-direction: column;
+    }
+    
+    .editButton, .saveButton, .cancelButton {
+        width: 100%;
+    }
+}
