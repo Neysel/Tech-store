@@ -203,10 +203,6 @@ const ProfilePage = () => {
                         <strong>156</strong>
                     </div>
                     <div className={style.statItem}>
-                        <span>Ads Posted</span>
-                        <strong>12</strong>
-                    </div>
-                    <div className={style.statItem}>
                         <span>Member Since</span>
                         <strong>2024</strong>
                     </div>
