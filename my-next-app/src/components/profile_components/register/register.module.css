@@ -41,7 +41,7 @@
 .form_register_all_input {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 
 }
 
@@ -92,7 +92,7 @@ button:disabled {
 .divider {
     position: relative;
     text-align: center;
-    margin: 20px 0;
+    margin: 5px 0;
     color: #dcdcdc;
 }
 

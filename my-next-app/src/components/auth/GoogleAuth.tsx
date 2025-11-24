@@ -4,17 +4,19 @@ import { useAppDispatch } from '@/hooks/hooks';
 import { loginSuccess, logout } from '@/features/auth/authSlice';
 import { useEffect } from 'react';
 import style from './GoogleAuth.module.css';
+import { useAppSelector } from '@/hooks/redux';
 
 const GoogleAuth = () => {
   const { data: session } = useSession();
   const dispatch = useAppDispatch();
+  const { isLoggedIn } = useAppSelector((state) => state.auth);
 
-  // Sync NextAuth session with Redux
-  useEffect(() => {
-    if (session?.user) {
-      // Create user data from Google session
+ // Sync NextAuth session with Redux - ONLY when session changes
+useEffect(() => {
+    if (session?.user && !isLoggedIn) {
+    
       const userData = {
-        user_id: session.user.email!, // Use email as ID for Google users
+        user_id: session.user.email!,
         username: session.user.email!.split('@')[0],
         name: session.user.name?.split(' ')[0] || 'User',
         last_name: session.user.name?.split(' ').slice(1).join(' ') || '',
@@ -29,18 +31,18 @@ const GoogleAuth = () => {
         localStorage.setItem('techero_current_user', JSON.stringify(userData));
       }
     }
-  }, [session, dispatch]);
+  }, [session, dispatch, isLoggedIn]);
 
   const handleGoogleSignIn = () => {
     signIn('google', { callbackUrl: '/profile' });
   };
 
-  const handleGoogleSignOut = () => {
-    signOut({ callbackUrl: '/' });
+   const handleGoogleSignOut = async () => {
+    // Clear Redux 
     dispatch(logout());
-    if (typeof window !== 'undefined') {
       localStorage.removeItem('techero_current_user');
-    }
+    // Then sign out from NextAuth
+    await signOut({ callbackUrl: '/' });
   };
 
   if (session) {

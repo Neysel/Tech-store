@@ -8,9 +8,11 @@ import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { clearError, loginUser } from '../../../features/auth/authSlice';
 import GoogleAuth from '@/components/auth/GoogleAuth';
+import { useSession } from 'next-auth/react';
 
 const Login = () => {
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
+     const { data: session, status } = useSession();
 
     const dispatch = useAppDispatch();
     const router = useRouter();
@@ -21,12 +23,16 @@ const Login = () => {
         password: '',
     });
 
-    //   Redirect if already logged in
+ // Redirect if already logged in - Check BOTH Redux and NextAuth
     useEffect(() => {
-        if (isLoggedIn) {
-            router.push('/products/all_products'); // Redirect to home page
+        // Only redirect if we're sure about the auth state
+        if (status === 'loading') return; // Wait for NextAuth to load
+        
+        if (isLoggedIn || session) {
+            console.log('Redirecting because:', { isLoggedIn, hasSession: !!session });
+            router.push('/products/all_products');
         }
-    }, [isLoggedIn, router]);
+    }, [isLoggedIn, session, status, router]); // Added status dependency
 
     // Error 
     useEffect(() => {
@@ -50,6 +56,20 @@ const Login = () => {
         });
     }
 
+
+    // Show loading state while checking authentication
+    if (status === 'loading') {
+        return (
+            <>
+                <Header/>
+                <div className={style.login}>
+                    <div className={style.form_login}>
+                        <h2 className={style.title}>Loading...</h2>
+                    </div>
+                </div>
+            </>
+        );
+    }
 
     return ( <>
         <Header/>

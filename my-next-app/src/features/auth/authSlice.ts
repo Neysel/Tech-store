@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthState, User, LoginCredentials, RegisterData } from '../../interfaces/auth';
 import mockData from '../../mock_data/users.json';
+import { signOut } from 'next-auth/react';
 
 
 const generateUserId = (): string => {
@@ -81,6 +82,7 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       state.error = null;
       localStorage.removeItem('techero_current_user');
+      signOut({ redirect: false });
     },
 
     // Clear error

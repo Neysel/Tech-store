@@ -6,7 +6,7 @@
     color: #dcdcdc;
 }
 .login {
-    margin: 200px auto 50px auto;
+    margin: 100px auto 50px auto;
     max-width: 500px;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@ button:disabled {
 .divider {
     position: relative;
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
     color: #dcdcdc;
 }
 
