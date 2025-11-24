@@ -1,7 +1,7 @@
 "use client"
 import Header from '@/components/header/Header';
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import style from './login.module.css';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
@@ -9,6 +9,21 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { clearError, loginUser } from '../../../features/auth/authSlice';
 import GoogleAuth from '@/components/auth/GoogleAuth';
 import { useSession } from 'next-auth/react';
+
+// Validation functions
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePassword = (password: string): boolean => {
+  return password.length >= 8;
+};
+
+interface FormErrors {
+  username?: string;
+  password?: string;
+}
 
 const Login = () => {
     // const searchParams = useSearchParams();
@@ -18,10 +33,47 @@ const Login = () => {
     const router = useRouter();
     const { isLoading, error, isLoggedIn } = useAppSelector((state) => state.auth);
     
-    const [formData, setFormData] = React.useState({
+   const [formData, setFormData] = React.useState({
         username: '',
         password: '',
     });
+
+    const [formErrors, setFormErrors] = useState<FormErrors>({});
+    const [touched, setTouched] = useState({
+        username: false,
+        password: false,
+    });
+
+    // Validate form
+    const validateForm = (): boolean => {
+        const errors: FormErrors = {};
+
+        // Check if username is empty
+        if (!formData.username.trim()) {
+            errors.username = 'Username or email is required';
+        } else if (formData.username.includes('@') && !validateEmail(formData.username)) {
+            // If it looks like an email, validate email format
+            errors.username = 'Please enter a valid email address';
+        }
+
+        // Check password
+        if (!formData.password) {
+            errors.password = 'Password is required';
+        } else if (!validatePassword(formData.password)) {
+            errors.password = 'Password must be at least 8 characters long';
+        }
+
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
+    // Validate on form data change
+    useEffect(() => {
+        if (touched.username || touched.password) {
+            validateForm();
+        }
+    }, [formData, touched])
+    
 
  // Redirect if already logged in - Check BOTH Redux and NextAuth
     useEffect(() => {
@@ -42,9 +94,21 @@ const Login = () => {
         };
     }, [dispatch]);
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+      function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-         console.log('error submit', error)
+        
+        // Mark all fields as touched
+        setTouched({
+            username: true,
+            password: true,
+        });
+
+        // Validate form
+        if (!validateForm()) {
+            return;
+        }
+
+        console.log('Submitting form', formData);
         dispatch(clearError());
         dispatch(loginUser(formData));
     }
@@ -56,6 +120,12 @@ const Login = () => {
         });
     }
 
+    function handleBlur(e: React.FocusEvent<HTMLInputElement>) {
+        setTouched({
+            ...touched,
+            [e.target.name]: true,
+        });
+    }
 
     // Show loading state while checking authentication
     if (status === 'loading') {
@@ -94,7 +164,11 @@ const Login = () => {
                             onChange={handleChange}
                             required 
                             disabled={isLoading}
+                            className={formErrors.username ? style.inputError : ''}
                         />
+                        {formErrors.username && (
+                            <div className={style.fieldError}>{formErrors.username}</div>
+                        )}
                 </div>
 
         <div className={style.form_login_all_input}>
@@ -107,7 +181,11 @@ const Login = () => {
                     onChange={handleChange}
                     required 
                     disabled={isLoading}
+                    className={formErrors.password ? style.inputError : ''}
                 />
+                 {formErrors.password && (
+                            <div className={style.fieldError}>{formErrors.password}</div>
+                        )}
         </div>
        
               <div className={style.lower_section}>

@@ -8,6 +8,28 @@ import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { useRouter } from 'next/navigation';
 import GoogleAuth from '@/components/auth/GoogleAuth';
 
+// Validation functions
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePassword = (password: string): boolean => {
+  return password.length >= 8;
+};
+
+const validateName = (name: string): boolean => {
+  return name.trim().length >= 2;
+};
+
+interface FormErrors {
+  username?: string;
+  name?: string;
+  last_name?: string;
+  email?: string;
+  password?: string;
+}
+
 const Register = () => {
      const dispatch = useAppDispatch();
     const router = useRouter();
