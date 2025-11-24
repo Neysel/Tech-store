@@ -99,6 +99,7 @@ const Register = () => {
 
     // Validate on form data change
     useEffect(() => {
+        // const allFieldsTouched = Object.values(touched).every(Boolean);
         if (Object.values(touched).some(field => field)) {
             validateForm();
         }
