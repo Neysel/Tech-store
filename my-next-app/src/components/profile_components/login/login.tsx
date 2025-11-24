@@ -5,11 +5,23 @@ import { useEffect } from 'react';
 import style from './login.module.css';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { clearError, loginUser } from '../../../features/auth/authSlice';
 import GoogleAuth from '@/components/auth/GoogleAuth';
 
 const Login = () => {
+    const searchParams = useSearchParams();
+    const error_oauth = searchParams.get('error');
+    
+    // Add this to your existing error state management
+    useEffect(() => {
+        if (error) {
+            console.log('OAuth Error:', error_oauth);
+            // You can set this error in your state to display to users
+        }
+    }, [error_oauth]);
+
+
 
     const dispatch = useAppDispatch();
     const router = useRouter();
