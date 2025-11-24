@@ -6,6 +6,7 @@ import style from './register.module.css';
 import { clearError, registerUser } from '@/../src/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { useRouter } from 'next/navigation';
+import GoogleAuth from '@/components/auth/GoogleAuth';
 
 const Register = () => {
      const dispatch = useAppDispatch();
@@ -52,6 +53,12 @@ const Register = () => {
             <form onSubmit={handleSubmit} className={style.form_register}>
                 <h2 className={style.title}>Register</h2>
                  {error && <div className={style.errorMessage}>{error}</div>}
+
+                    <GoogleAuth />
+                    <div className={style.divider}>
+                        <span>or register with email</span>
+                    </div>
+
                <div className={style.form_register_all_input}>
                         <label htmlFor="username">Login</label>
                         <input 

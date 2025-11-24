@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { useRouter } from 'next/navigation';
 import { clearError, loginUser } from '../../../features/auth/authSlice';
+import GoogleAuth from '@/components/auth/GoogleAuth';
 
 const Login = () => {
 
@@ -55,6 +56,13 @@ const Login = () => {
             <form onSubmit={handleSubmit} className={style.form_login}>
                 <h2 className={style.title}>Login</h2>
                 {error && <div className={style.errorMessage}>{error}</div>}
+                
+                {/* GOOGLE AUTH */}
+                    <GoogleAuth />
+                    <div className={style.divider}>
+                        <span>or continue with email</span>
+                    </div>
+
                 <div className={style.form_login_all_input}>
                     <label htmlFor="username">Email or Login:</label>
                      <input 

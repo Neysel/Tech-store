@@ -88,3 +88,27 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+    color: #dcdcdc;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #02b3ff, transparent);
+}
+
+.divider span {
+    background: #2b2b2b;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
