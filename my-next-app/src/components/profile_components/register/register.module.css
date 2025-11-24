@@ -112,3 +112,31 @@ button:disabled {
     position: relative;
     z-index: 1;
 }
+
+/* for validation */
+.inputError {
+  border-color: #ff4444 !important;
+  /* background-color: #fff8f8; */
+}
+
+.fieldError {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.fieldError::before {
+  content: "⚠ ";
+  margin-right: 0.25rem;
+}
+
+.errorMessage {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #c62828;
+}
