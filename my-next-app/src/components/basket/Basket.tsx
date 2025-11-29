@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { clearCart, removeFromCart, updateQuantity } from '@/features/basket/cartSlice';
 import { RootState } from '@/store';
 import { CartItem, CartState } from '@/interfaces/basket';
+import Header from '../header/Header';
 
 const Basket = () => {
 
@@ -22,6 +23,8 @@ const Basket = () => {
 
   if (items.length === 0) {
     return (
+      <>
+      <Header/>
       <div className="max-w-md mx-auto p-6">
         <h2 className="text-2xl font-bold mb-4">Your Basket</h2>
         <p className="text-gray-500 mb-4">Your basket is empty</p>
@@ -29,11 +32,13 @@ const Basket = () => {
           Continue Shopping
         </Link>
       </div>
+      </>
     );
   }
 
     return ( 
         <>
+           <Header/>
                <div className="max-w-4xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Your Basket</h2>
@@ -102,7 +107,7 @@ const Basket = () => {
         <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-semibold mb-2">
           Proceed to Checkout
         </button>
-        <Link href="/products" className="block text-center text-blue-600 hover:text-blue-800">
+        <Link href="/products/all_products" className="block text-center text-blue-600 hover:text-blue-800">
           Continue Shopping
         </Link>
       </div>

@@ -7,6 +7,7 @@ import { Product } from '@/interfaces/product';
 import style from './ProductDetailPage.module.css'
 import { useAppDispatch } from '@/hooks/redux';
 import { addToCart } from '@/features/basket/cartSlice';
+import Header from '../header/Header';
 
 
 export default function ProductItemPage() {
@@ -70,6 +71,8 @@ console.log('Add to Cart button clicked');
   }
 
   return (
+    <>  
+              <Header/>
     <div className="container mx-auto p-8">
       {/* Breadcrumb */}
       <nav className="mb-8">
@@ -185,5 +188,6 @@ console.log('Add to Cart button clicked');
         </div>
       )}
     </div>
+        </>
   );
 }

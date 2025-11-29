@@ -23,9 +23,6 @@ export default function RootLayout({
       <body className={inter.className}>
          <AuthSessionProvider>
           <StoreProvider>
-            <header>
-            <CartIcon />
-            </header>
             {children}
           </StoreProvider>
         </AuthSessionProvider>

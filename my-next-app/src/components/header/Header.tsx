@@ -7,6 +7,7 @@ import router from 'next/navigation';
 import { useAppDispatch } from '@/hooks/redux';
 import { checkAuth, logout } from '@/features/auth/authSlice';
 import { useEffect } from 'react';
+import CartIcon from '../basket/CartIcon';
 
 
 const Header = () => {
@@ -72,9 +73,10 @@ const Header = () => {
                     </Link>
                 )}
                                     
-                <Link href="/cart">
+                <Link href="/basket">
                 <button className={style.header_btn_blue}>
-                    Cart
+                    {/* Cart */}
+                    <CartIcon/>
                 </button>
                 </Link>
                 </div>  
