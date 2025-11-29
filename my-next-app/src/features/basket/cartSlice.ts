@@ -13,15 +13,21 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<Omit<CartItem, 'quantity'>>) => {
+   console.log('addToCart reducer called with:', action.payload);
+
       const existingItem = state.items.find(item => item.id === action.payload.id);
       
       if (existingItem) {
         existingItem.quantity += 1;
+          console.log('Increased quantity for existing item:', existingItem);
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        const newItem = { ...action.payload, quantity: 1 };
+        state.items.push(newItem);
+         console.log('Added new item to cart:', newItem);
       }
       
       state.total = state.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+        console.log('Updated cart state:', state);
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter(item => item.id !== action.payload);

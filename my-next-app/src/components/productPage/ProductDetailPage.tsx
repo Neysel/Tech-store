@@ -31,7 +31,17 @@ export default function ProductItemPage() {
 
  // Add to cart handler
   const handleAddToCart = () => {
+console.log('Add to Cart button clicked');
+
     if (product) {
+          console.log('Product found:', product.name);
+    console.log('Dispatching addToCart with:', {
+      id: product.product_id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+
       dispatch(addToCart({
         id: product.product_id,
         name: product.name,
@@ -39,6 +49,10 @@ export default function ProductItemPage() {
         image: product.image,
         // quantity: 1
       }));
+
+       console.log('Dispatched successfully');
+    } else {
+      console.log('No product found');
     }
   };
 

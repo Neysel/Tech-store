@@ -52,13 +52,16 @@ const MainPage = () => {
                 </div>
             </section>
             <section className={style.section2}>
-                <div>
+                <div className={style.category_section}>
                     <div>
+                        <div>
                         HEADPHONES
-                    </div>
+                        </div>
                         <div>
                         LOUDSPEAKERS
+                        </div>
                     </div>
+ 
                      <div>
                         MICROPHONES
                     </div>

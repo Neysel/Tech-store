@@ -8,6 +8,7 @@ export const makeStore = () => {
       auth: authReducer,
       cart: cartReducer,
     },
+     devTools: process.env.NODE_ENV !== 'production',
   })
 }
 
