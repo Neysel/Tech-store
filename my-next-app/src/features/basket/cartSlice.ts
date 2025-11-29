@@ -1,17 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { CartItem, CartState } from '@/interfaces/basket';
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  image?: string;
-  quantity: number;
-}
 
-interface CartState {
-  items: CartItem[];
-  total: number;
-}
 
 const initialState: CartState = {
   items: [],

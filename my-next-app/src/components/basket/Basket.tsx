@@ -3,8 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { CartItem, clearCart, removeFromCart, updateQuantity } from '@/features/basket/cartSlice';
+import { clearCart, removeFromCart, updateQuantity } from '@/features/basket/cartSlice';
 import { RootState } from '@/store';
+import { CartItem, CartState } from '@/interfaces/basket';
 
 const Basket = () => {
 

@@ -80,8 +80,8 @@ const ProfilePage = () => {
                     <a href="/products/portable_loudspeakers" className={style.navLink}>
                         Portable loudspeakers
                     </a>
-                    <a href="/products/earplugs" className={style.navLink}>
-                        Earplugs
+                    <a href="/products/earphones" className={style.navLink}>
+                        Earphones
                     </a>
                 </nav>
             </aside>

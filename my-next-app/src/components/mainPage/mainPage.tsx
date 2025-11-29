@@ -52,6 +52,20 @@ const MainPage = () => {
                 </div>
             </section>
             <section className={style.section2}>
+                <div>
+                    <div>
+                        HEADPHONES
+                    </div>
+                        <div>
+                        LOUDSPEAKERS
+                    </div>
+                     <div>
+                        MICROPHONES
+                    </div>
+                    <div>
+                        EARPHONES
+                    </div>
+                </div>
                 {/* <Boxes img={headphoneImg} title='HEADPHONES' link=''/>
                 <Boxes img={speakersImg} title='SPEAKERS' link=''/>
                 <Boxes img={earphonesImg} title='EARPHONES' link=''/> */}

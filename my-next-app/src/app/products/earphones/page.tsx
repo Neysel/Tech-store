@@ -7,5 +7,5 @@ interface CategoryPageProps {
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
-  return <AllProducts category="earplugs" />;
+  return <AllProducts category="earphones" />;
 }

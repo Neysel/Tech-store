@@ -28,6 +28,20 @@ export default function ProductItemPage() {
     }
   }, [productId]);
 
+
+ // Add to cart handler
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(addToCart({
+        id: product.product_id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        // quantity: 1
+      }));
+    }
+  };
+
   if (loading) {
     return <div className="container mx-auto p-8">Loading...</div>;
   }
@@ -99,6 +113,7 @@ export default function ProductItemPage() {
 
           {/* Add to Cart Button */}
           <button
+           onClick={handleAddToCart}
             className={`w-full py-3 px-6 rounded-lg font-semibold ${style.add_to_card_button} ${
               product.in_stock
                 ? 'bg-blue-600 text-white hover:bg-blue-700'
