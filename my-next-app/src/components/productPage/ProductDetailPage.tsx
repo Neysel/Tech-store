@@ -5,7 +5,7 @@ import mockData from '../../mock_data/data.json'
 import Image from 'next/image';
 import { Product } from '@/interfaces/product';
 import style from './ProductDetailPage.module.css'
-import { useAppDispatch } from '@/hooks/redux';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { addToCart } from '@/features/basket/cartSlice';
 import Header from '../header/Header';
 
@@ -16,6 +16,7 @@ export default function ProductItemPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const dispatch = useAppDispatch();
+  const { currentUser, isLoggedIn,  } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (productId) {
@@ -32,28 +33,16 @@ export default function ProductItemPage() {
 
  // Add to cart handler
   const handleAddToCart = () => {
-console.log('Add to Cart button clicked');
-
     if (product) {
-          console.log('Product found:', product.name);
-    console.log('Dispatching addToCart with:', {
-      id: product.product_id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-    });
-
       dispatch(addToCart({
-        id: product.product_id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        // quantity: 1
+        item: {
+          id: product.product_id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+        },
+        userId: currentUser?.user_id // Pass user ID if logged in
       }));
-
-       console.log('Dispatched successfully');
-    } else {
-      console.log('No product found');
     }
   };
 

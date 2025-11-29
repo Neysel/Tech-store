@@ -53,7 +53,7 @@ const MainPage = () => {
             </section>
             <section className={style.section2}>
                 <div className={style.category_section}>
-                    <div>
+                    <div className={style.subcategory_section}> 
                         <div>
                         HEADPHONES
                         </div>
@@ -61,13 +61,16 @@ const MainPage = () => {
                         LOUDSPEAKERS
                         </div>
                     </div>
- 
-                     <div>
-                        MICROPHONES
+
+                    <div className={style.subcategory_section}>
+                        <div>
+                            MICROPHONES
+                        </div>
+                        <div>
+                            EARPHONES
+                        </div>
                     </div>
-                    <div>
-                        EARPHONES
-                    </div>
+
                 </div>
                 {/* <Boxes img={headphoneImg} title='HEADPHONES' link=''/>
                 <Boxes img={speakersImg} title='SPEAKERS' link=''/>

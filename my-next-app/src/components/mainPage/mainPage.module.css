@@ -81,6 +81,17 @@
   margin-top: 150px;
 }
 
+.category_section {
+  background-color: rgb(57, 57, 57);
+  color: white;
+  margin: 0 auto;
+}
+
+.subcategory_section {
+  display: flex;
+  gap: 20px;
+}
+
 @media screen and (max-width: 1441px) {
   .section1_wrapper {
     padding: 9rem 2rem;
