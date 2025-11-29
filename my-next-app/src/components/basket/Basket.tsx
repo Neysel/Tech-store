@@ -7,18 +7,34 @@ import { clearCart, removeFromCart, updateQuantity } from '@/features/basket/car
 import { RootState } from '@/store';
 import { CartItem, CartState } from '@/interfaces/basket';
 import Header from '../header/Header';
+import { checkAuth, logout } from '@/features/auth/authSlice';
 
 const Basket = () => {
 
      const { items, total } = useAppSelector((state: RootState) => state.cart);
+    const { currentUser, isLoggedIn } = useAppSelector((state) => state.auth); 
+
   const dispatch = useAppDispatch();
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
-      dispatch(removeFromCart(id));
+      dispatch(removeFromCart({ id, userId: currentUser?.user_id }));
     } else {
-      dispatch(updateQuantity({ id, quantity: newQuantity }));
+      dispatch(updateQuantity({ id, quantity: newQuantity, userId: currentUser?.user_id  }));
     }
+  };
+
+    const handleCheckout = () => {
+    if (!isLoggedIn) {
+      alert('Please log in to proceed with checkout');
+      // redirect to login page here
+      // router.push('/login');
+      return;
+    }
+    
+    // Proceed with checkout logic
+    console.log('Proceeding to checkout for user:', currentUser?.user_id );
+    // 
   };
 
   if (items.length === 0) {
@@ -43,7 +59,7 @@ const Basket = () => {
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Your Basket</h2>
         <button
-          onClick={() => dispatch(clearCart())}
+          onClick={() => dispatch(clearCart({userId: currentUser?.user_id }))}
           className="text-red-600 hover:text-red-800 text-sm"
         >
           Clear All
@@ -89,7 +105,7 @@ const Basket = () => {
                 ${(item.price * item.quantity).toFixed(2)}
               </p>
               <button
-                onClick={() => dispatch(removeFromCart(item.id))}
+                onClick={() => dispatch(removeFromCart({id: item.id, userId: currentUser?.user_id }))}
                 className="text-red-500 hover:text-red-700 text-sm mt-1"
               >
                 Remove
@@ -104,8 +120,16 @@ const Basket = () => {
           <span>Total:</span>
           <span>${total.toFixed(2)}</span>
         </div>
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-semibold mb-2">
-          Proceed to Checkout
+        <button 
+         onClick={handleCheckout}
+                 className={`w-full py-3 px-6 rounded-lg font-semibold mb-2 ${
+            isLoggedIn 
+              ? 'bg-blue-600 text-white hover:bg-blue-700' 
+              : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+          }`}
+          disabled={!isLoggedIn || items.length === 0}
+        >
+         {isLoggedIn ? 'Proceed to Checkout' : 'Please Login to Checkout'}
         </button>
         <Link href="/products/all_products" className="block text-center text-blue-600 hover:text-blue-800">
           Continue Shopping
