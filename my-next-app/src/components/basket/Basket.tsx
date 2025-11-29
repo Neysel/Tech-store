@@ -28,7 +28,7 @@ const Basket = () => {
       <div className="max-w-md mx-auto p-6">
         <h2 className="text-2xl font-bold mb-4">Your Basket</h2>
         <p className="text-gray-500 mb-4">Your basket is empty</p>
-        <Link href="/products" className="text-blue-600 hover:text-blue-800">
+        <Link href="/products/all_products" className="text-blue-600 hover:text-blue-800">
           Continue Shopping
         </Link>
       </div>
