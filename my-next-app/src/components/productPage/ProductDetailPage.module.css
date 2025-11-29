@@ -1,0 +1,12 @@
+.add_to_card_button {
+    cursor: pointer;
+    height: 50px;
+}
+
+.product-info {
+    color: black;
+}
+
+.product-info h1 {
+    color: black;
+}

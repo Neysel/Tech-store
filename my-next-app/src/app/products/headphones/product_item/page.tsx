@@ -6,7 +6,7 @@ import { Product } from '../../../../interfaces/product';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ProductItemPage from '../../all_products/product_item/page';
+import ProductItemPage from '@/components/productPage/ProductDetailPage';
 
 export default function HeadphoneProductItemPage() {
 return (<ProductItemPage />);
