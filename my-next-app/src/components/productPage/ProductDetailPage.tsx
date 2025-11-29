@@ -5,12 +5,16 @@ import mockData from '../../mock_data/data.json'
 import Image from 'next/image';
 import { Product } from '@/interfaces/product';
 import style from './ProductDetailPage.module.css'
+import { useAppDispatch } from '@/hooks/redux';
+import { addToCart } from '@/features/basket/cartSlice';
+
 
 export default function ProductItemPage() {
   const searchParams = useSearchParams();
   const productId = searchParams?.get('id');
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (productId) {

@@ -1,15 +1,15 @@
 "use client"
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import { RootState } from '../../redux/store';
-// import { removeFromCart, updateQuantity, clearCart } from '../../redux/features/cartSlice';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import { CartItem, clearCart, removeFromCart, updateQuantity } from '@/features/basket/cartSlice';
+import { RootState } from '@/store';
 
 const Basket = () => {
 
-     const { items, total } = useSelector((state: RootState) => state.cart);
-  const dispatch = useDispatch();
+     const { items, total } = useAppSelector((state: RootState) => state.cart);
+  const dispatch = useAppDispatch();
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
@@ -45,7 +45,7 @@ const Basket = () => {
       </div>
 
       <div className="space-y-4 mb-8">
-        {items.map((item) => (
+        {items.map((item: CartItem) => (
           <div key={item.id} className="flex items-center border-b pb-4">
             {item.image && (
               <Image
