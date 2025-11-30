@@ -1,9 +1,6 @@
 "use client"
 import React, { useEffect } from "react";
 import style from './mainPage.module.css';
-import headphoneImg from '../../src/app/assets/component1.png';
-import speakersImg from '../../src/app/assets/component2.png';
-import earphonesImg from '../../src/app/assets/component3.png';
 import Link from "next/link";
 import Header from "../header/Header";
 
@@ -13,6 +10,12 @@ interface MainPageProps {
 
 const MainPage = () => {
     useEffect(() => {
+
+        // We are using mock data here instead of fetching data from the server, this project shows the exact interface but without a server.
+        // Prevous project used server data but now servers are gone so I created this project with stable products
+        // it includes user tokens, products, auth check and security check
+
+        /////
         // const fetchAccessToken = async () => {
         //     if (!accessToken) {
         //         try {
@@ -25,7 +28,7 @@ const MainPage = () => {
         // };
 
         // fetchAccessToken();
-        
+        ////
     });
 
     return (
