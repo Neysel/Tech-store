@@ -28,15 +28,19 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     setSelectedColors
   } = props;
 
+  let minValue = 40
+  let currentMaxValue = 400
+  let maxValue = 2000
+
    // Refs for the slider elements
   let sliderOneRef = React.useRef<HTMLInputElement>(null);
   let sliderTwoRef = React.useRef<HTMLInputElement>(null);
   let displayValOneRef = React.useRef<HTMLSpanElement>(null);
   let displayValTwoRef = React.useRef<HTMLSpanElement>(null);
   let sliderTrackRef = React.useRef<HTMLDivElement>(null);
-  let [sliderValues, setSliderValues] = React.useState<[number, number]>([30, 300]);
+  let [sliderValues, setSliderValues] = React.useState<[number, number]>([minValue, currentMaxValue]);
   let minGap = 0;
-  let sliderMaxValue = 300;
+  let sliderMaxValue = maxValue;
 
 
   
@@ -55,7 +59,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
 
   // Get min and max price from products
   const priceStats = React.useMemo(() => {
-    return { min: 0, max: 300 };
+    return { min: 0, max: maxValue };
   }, [products]);
 
   // Handle brand selection
@@ -274,12 +278,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
             ))}
           </div>
         </div>
-      )}
-
-  {/* Double Range Slider Test */} 
-    
-
-        
+      )}   
 
 
       {/* Clear Filters Button */}

@@ -10,10 +10,9 @@ import { useDebounce } from "@/hooks/debounce";
 import Header from "../header/Header";
 
 
-interface AllProductsProps {
-  category?: string; // Add this line
-}
-
+    interface AllProductsProps {
+      category?: string; 
+    }
     const all_products: React.FC<AllProductsProps > = ({ category }) => {
     const [products, setProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -21,20 +20,20 @@ interface AllProductsProps {
     const [error, setError] = useState<string | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [sortOption, setSortOption] = useState<string>("");
-    const [shoppingList, setShoppingList] = useState<any[]>([]); // State to store the shopping list
+    const [shoppingList, setShoppingList] = useState<any[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const itemsPerPage = 8;
-    const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
+    const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
     const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
     const [selectedColors, setSelectedColors] = useState<string[]>([]);
      const [isLoading, setIsLoading] = useState<boolean>(false);
       const [showLoading, setShowLoading] = useState<boolean>(false); 
 
-    const debouncedSearchQuery = useDebounce(searchQuery, 700);
-    const debouncedPriceRange = useDebounce(priceRange, 700);
-    const debouncedSelectedBrands = useDebounce(selectedBrands, 700);
-    const debouncedSelectedColors = useDebounce(selectedColors, 700);
-    const debouncedSortOption = useDebounce(sortOption, 700);
+    const debouncedSearchQuery = useDebounce(searchQuery, 400);
+    const debouncedPriceRange = useDebounce(priceRange, 400);
+    const debouncedSelectedBrands = useDebounce(selectedBrands, 400);
+    const debouncedSelectedColors = useDebounce(selectedColors, 400);
+    const debouncedSortOption = useDebounce(sortOption, 400);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -137,7 +136,7 @@ interface AllProductsProps {
             setCurrentPage(1);
             setIsLoading(false);
             setShowLoading(false);
-        }, 500); // Minimum 500ms loading display
+        }, 800); // Minimum 500ms loading display
         
         return () => clearTimeout(timer);
     }, [
