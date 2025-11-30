@@ -76,7 +76,7 @@ const MainPage = () => {
                 <Boxes img={speakersImg} title='SPEAKERS' link=''/>
                 <Boxes img={earphonesImg} title='EARPHONES' link=''/> */}
             </section>
-            {/* <SpeakersComp/> */}
+            <footer/>
         </div>
     )
 }
