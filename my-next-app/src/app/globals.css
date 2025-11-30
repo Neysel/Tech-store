@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
 *{
   margin: 0;
   padding: 0;
@@ -29,4 +33,23 @@ body {
   background: var(--background);
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
 }

@@ -1,3 +1,4 @@
+
 .homePage {
   width: 100%;
 }
@@ -92,206 +93,21 @@
   gap: 20px;
 }
 
-@media screen and (max-width: 1441px) {
-  .section1_wrapper {
-    padding: 9rem 2rem;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-@media screen and (max-width: 798px) {
-  .section1_wrapper {
-    justify-content: center;
-    background-position: center;
-    padding: 6rem 2rem;
-    background-size: 100%;
-  }
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
 
-@media screen and (max-width: 720px) {
-  .section2 {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6rem;
-  }
+/* Pause animation on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
-
-@media screen and (max-width: 500px) {
-  .main_content h1 {
-    font-size: 38px;
-  }
-
-  .main_content p {
-    font-size: 12px;
-  }
-
-  .seeProductBtn {
-    font-size: 0.9em;
-    padding: 0.7rem 1rem;
-  }
-}
-
-
-.promoCode {
-    display: inline-block;
-    background-image: radial-gradient(
-      ellipse 50% 35% at 50% 50%,
-      #6b1839,
-      transparent
-    );
-    letter-spacing: 2;
-    font-family: "Clip";
-    font-size: 1.3rem;
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    animation: shine 2s forwards, flicker 3s infinite;
-  }
-  
-  @keyframes blink {
-    0%,
-    22%,
-    36%,
-    75% {
-      color: #ffe6ff;
-      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    }
-    28%,
-    33% {
-      color: #ff65bd;
-      text-shadow: none;
-    }
-    82%,
-    97% {
-      color: #ff2483;
-      text-shadow: none;
-    }
-  }
-
-  @keyframes flicker {
-    from {
-      opacity: 1;
-    }
-  
-    4% {
-      opacity: 0.9;
-    }
-  
-    6% {
-      opacity: 0.85;
-    }
-  
-    8% {
-      opacity: 0.95;
-    }
-  
-    10% {
-      opacity: 0.9;
-    }
-  
-    11% {
-      opacity: 0.922;
-    }
-  
-    12% {
-      opacity: 0.9;
-    }
-  
-    14% {
-      opacity: 0.95;
-    }
-  
-    16% {
-      opacity: 0.98;
-    }
-  
-    17% {
-      opacity: 0.9;
-    }
-  
-    19% {
-      opacity: 0.93;
-    }
-  
-    20% {
-      opacity: 0.99;
-    }
-  
-    24% {
-      opacity: 1;
-    }
-  
-    26% {
-      opacity: 0.94;
-    }
-  
-    28% {
-      opacity: 0.98;
-    }
-  
-    37% {
-      opacity: 0.93;
-    }
-  
-    38% {
-      opacity: 0.5;
-    }
-  
-    39% {
-      opacity: 0.96;
-    }
-  
-    42% {
-      opacity: 1;
-    }
-  
-    44% {
-      opacity: 0.97;
-    }
-  
-    46% {
-      opacity: 0.94;
-    }
-  
-    56% {
-      opacity: 0.9;
-    }
-  
-    58% {
-      opacity: 0.9;
-    }
-  
-    60% {
-      opacity: 0.99;
-    }
-  
-    68% {
-      opacity: 1;
-    }
-  
-    70% {
-      opacity: 0.9;
-    }
-  
-    72% {
-      opacity: 0.95;
-    }
-  
-    93% {
-      opacity: 0.93;
-    }
-  
-    95% {
-      opacity: 0.95;
-    }
-  
-    97% {
-      opacity: 0.93;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }

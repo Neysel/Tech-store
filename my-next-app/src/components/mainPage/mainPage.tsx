@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import style from './mainPage.module.css';
 import Link from "next/link";
 import Header from "../header/Header";
+import Footer from "../footer/footer";
 
 interface MainPageProps {
     accessToken: {value: string} | null;
@@ -30,6 +31,18 @@ const MainPage = () => {
         // fetchAccessToken();
         ////
     });
+
+const partners = [
+        { id: 1, name: "Sony", logo: "/partners/sony.png" },
+        { id: 2, name: "Bose", logo: "/partners/bose.png" },
+        { id: 3, name: "Sennheiser", logo: "/partners/sennheiser.png" },
+        { id: 4, name: "Audio-Technica", logo: "/partners/audio-technica.png" },
+        { id: 5, name: "JBL", logo: "/partners/jbl.png" },
+        { id: 6, name: "Shure", logo: "/partners/shure.png" },
+        { id: 7, name: "Beyerdynamic", logo: "/partners/beyerdynamic.png" },
+        { id: 8, name: "AKG", logo: "/partners/akg.png" },
+    ];
+
 
     return (
         <div className={style.homePage}>
@@ -85,9 +98,9 @@ const MainPage = () => {
             {/* partners */}
             <section className={style.section_5}>
 
-            </section>
-
-            <footer/>
+            </section>  
+            <Footer/>
+            
         </div>
     )
 }

@@ -3,6 +3,7 @@
 import React from 'react';
 import { useAppSelector } from '@/hooks/redux';
 import Link from 'next/link';
+import style from './CartIcon.module.css'
 
 export default function CartIcon() {
   const { items, total } = useAppSelector((state) => state.cart);
