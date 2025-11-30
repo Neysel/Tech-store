@@ -1,0 +1,11 @@
+.cart_words_icon {
+    padding-top: 3px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.total {
+
+}

@@ -1,37 +1,79 @@
-
+/* mainPage.module.css */
 .homePage {
   width: 100%;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Hero Section - Cyberpunk Style */
 .section_1 {
   position: relative;
-  background-color: black;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  overflow: hidden;
+}
+
+.section_1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 80%),
+    radial-gradient(circle at 80% 20%, rgba(0, 150, 255, 0.1) 0%, transparent 80%),
+    radial-gradient(circle at 40% 40%, rgba(100, 0, 255, 0.05) 0%, transparent 80%);
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
 }
 
 .section1_wrapper {
   width: 100%;
-  /* height: 500px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url("../../..//assets/background_headphones/main.jpeg");
+  background-image: url("../../../assets/background_assets/main.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right 0 bottom 0;
-  padding: 15rem 0 13rem 0;
+  padding: 10rem 0 10rem 0;
+  position: relative;
+}
+
+.section1_wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient( */
+    /* 45deg, */
+    /* rgba(10, 10, 10, 0.1) 0%, */
+    /* rgba(26, 26, 46, 0.2) 50%, */
+    /* rgba(22, 33, 62, 0.3) 100% */
+  /* ); */
+  z-index: 1;
 }
 
 .container {
   max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto !important;
   display: flex;
   justify-content: end;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .main_content {
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,59 +82,332 @@
   width: 100%;
 }
 
-.section1_wrapper h1 {
-  font-size: 56px;
-  font-weight: 700;
-  color: white;
+.main_content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #00ffff, #0099ff, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
 }
 
-.section1 p {
-  color: #828282;
-  line-height: 150%;
-}
-
-.newProd {
-  letter-spacing: 5px;
+.main_content p {
+  color: #ccd6f6;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .seeProductBtn {
-  color: white;
-  background-color: #02b3ff;
-  border-radius: 120px;
-  /* border: none; */
-  padding: 1rem 2rem;
+  color: #0a0a0a;
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem 2.5rem;
   cursor: pointer;
-  font-size: 1.02em;
-  transition: 0.3s ease-in-out;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.seeProductBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.seeProductBtn:hover::before {
+  left: 100%;
 }
 
 .seeProductBtn:hover {
-  background-color: #0285ff;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.8),
+    0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.section_2 {
-  max-width: 1440px;
-  width: 100%;
-  margin: 104px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  margin-top: 150px;
+/* Categories Section - Cyberpunk Grid */
+.categoriesSection {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  padding: 6rem 0;
+  position: relative;
+
 }
 
-.category_section {
-  background-color: rgb(57, 57, 57);
-  color: white;
+.categoriesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ffff, #0099ff, transparent);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.categoriesSection h2 {
+  margin-bottom: 40px;
+}
+
+.categoriesSection_container {
   margin: 0 auto;
 }
 
-.subcategory_section {
-  display: flex;
-  gap: 20px;
+/* .categoriesSection .container { */
+  /* margin: 0 auto; */
+/* } */
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
+.categoryCard {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.2),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  border-color: #00ffff;
+  box-shadow: 
+    0 0 40px rgba(0, 255, 255, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.categoryCard:hover::before {
+  opacity: 1;
+}
+
+.categoryImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.categoryCard:hover .categoryImage {
+  opacity: 0.9;
+}
+
+.categoryContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
+  z-index: 2;
+}
+
+.categoryTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.categoryDescription {
+  color: #ccd6f6;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Specific category backgrounds */
+.headphones_pic {
+  background-image: url("../../../assets/background_assets/headphones_preview.png");
+}
+
+.loudspeakers_pic {
+  background-image: url("../../../assets/background_assets/background_loudspeaker.png");
+}
+
+.microphones_pic {
+  background-image: url("../../../assets/background_assets/microphones.png");
+}
+
+.earphones_pic {
+  background-image: url("../../../assets/background_assets/earphones_preview.png");
+}
+
+/* Cyberpunk Partners Section */
+.partners_scrolling_section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  padding: 4rem 0;
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  position: relative;
+}
+
+.partners_scrolling_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(0, 255, 255, 0.05) 50%, transparent 100%),
+    radial-gradient(circle at 30% 50%, rgba(0, 100, 255, 0.1) 0%, transparent 50%);
+}
+
+.partners_scrolling_section_items_array {
+  display: flex;
+  gap: 4rem;
+  padding: 2rem 0;
+}
+
+.partners_scrolling_section_item {
+  flex-shrink: 0;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.partners_scrolling_section_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.partners_scrolling_section_item:hover::before {
+  left: 100%;
+}
+
+.partners_scrolling_section_item:hover {
+  border-color: #00ffff;
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.partners_scrolling_section_item_text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cyberpunk Ad Sections */
+.cyberpunkAd {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunkAd::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 0%, rgba(0, 255, 255, 0.05) 50%, transparent 100%),
+    radial-gradient(circle at 70% 30%, rgba(0, 150, 255, 0.1) 0%, transparent 50%);
+}
+
+.cyberpunkButton {
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunkButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.6),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
 @keyframes scroll {
   0% {
@@ -107,7 +422,31 @@
   animation: scroll 30s linear infinite;
 }
 
-/* Pause animation on hover */
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .main_content h1 {
+    font-size: 3rem;
+  }
+  
+  .main_content p {
+    font-size: 1.1rem;
+  }
+  
+  .partners_scrolling_section_item {
+    width: 150px;
+    height: 80px;
+  }
+  
+  .partners_scrolling_section_item_text {
+    font-size: 1.4rem;
+  }
 }

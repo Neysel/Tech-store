@@ -33,15 +33,37 @@
     color: white;
     font-size: 20px;
     background-color: #02b3ff;
-    width: 120px;
-    height: 40px;
+    width: 140px;
+    height: 50px;
     cursor: pointer;
     border-radius: 7px;
     transition: all 0.3s ;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
 }
 
 .header_btn_blue:hover {
   background-color: #0285ff;
 }
 
+.header_btn_cart {
+    /* margin-top: 12px; */
+    text-decoration: none;
+    color: #000c27;
+    font-size: 20px;
+    background-color: #ffffff;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.3s ;
+}
+
+.header_btn_cart:hover {
+      /* background-color: #0285ff; */
+      color: #02b3ff;
+}
 
