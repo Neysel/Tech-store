@@ -8,6 +8,7 @@ import cartSlice from '@/features/basket/cartSlice';
 import authSlice from '@/features/auth/authSlice';
 import authReducer from '@/features/auth/authSlice'
 import cartReducer from '@/features/basket/cartSlice'
+import { combineReducers } from 'redux';
 
 jest.mock('../header/Header', () => {
   return function MockHeader() {
@@ -27,7 +28,7 @@ jest.mock('next/image', () => {
   };
 });
 
-import { combineReducers } from 'redux';
+
 
 const createMockStore = (preloadedState: any) => {
 
@@ -90,11 +91,15 @@ describe('Basket Component', () => {
       </Provider>
     );
 
+    const prices_49 = screen.getAllByText('$49.99');
+    const prices_99 = screen.getAllByText('$99.99');
+    const prices_249 = screen.getAllByText('$249.97');
+
     expect(screen.getByText('Test Product 1')).toBeInTheDocument();
     expect(screen.getByText('Test Product 2')).toBeInTheDocument();
-    expect(screen.getByText('$99.99')).toBeInTheDocument();
-    expect(screen.getByText('$49.99')).toBeInTheDocument();
-    expect(screen.getByText('$249.97')).toBeInTheDocument(); // Total: (99.99*2) + 49.99
+    expect(prices_49[0]).toBeInTheDocument();
+    expect(prices_99[0]).toBeInTheDocument();
+    expect(prices_249[0]).toBeInTheDocument(); // Total: (99.99*2) + 49.99
   });
 
   it('allows increasing item quantity', async () => {
