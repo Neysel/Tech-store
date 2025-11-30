@@ -4,6 +4,7 @@ import './globals.css'
 import StoreProvider from '../providers/StoreProvider'
 import AuthSessionProvider from '@/providers/SessionProvider'
 import CartIcon from '@/components/basket/CartIcon'
+import CartManager from '../components/cart/CartManager'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
          <AuthSessionProvider>
           <StoreProvider>
+            <CartManager/>
             {children}
           </StoreProvider>
         </AuthSessionProvider>

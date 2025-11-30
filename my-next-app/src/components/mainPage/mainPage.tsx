@@ -1,16 +1,11 @@
 "use client"
 import React, { useEffect } from "react";
-
 import style from './mainPage.module.css';
-
-// import Boxes from '../homePageBoxes/boxes';
 import headphoneImg from '../../src/app/assets/component1.png';
 import speakersImg from '../../src/app/assets/component2.png';
 import earphonesImg from '../../src/app/assets/component3.png';
 import Link from "next/link";
 import Header from "../header/Header";
-// import SpeakersComp from '../speakersComponent/speakersComp';
-// import { fetchOAuthToken, setCookies } from '../../lib/auth';
 
 interface MainPageProps {
     accessToken: {value: string} | null;
@@ -78,6 +73,17 @@ const MainPage = () => {
             <section className={style.section_3}>
 
             </section>
+
+            {/* ads section */}
+            <section className={style.section_4}>
+
+            </section>
+
+            {/* partners */}
+            <section className={style.section_5}>
+
+            </section>
+
             <footer/>
         </div>
     )

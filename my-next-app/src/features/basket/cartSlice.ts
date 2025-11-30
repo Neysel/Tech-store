@@ -91,31 +91,73 @@ const cartSlice = createSlice({
         state.total = 0;
       }
     },
-    switchUserCart: (state, action: PayloadAction<{ fromUserId?: string; toUserId?: string }>) => {
-      // When user logs in/out, switch between carts
-      const { fromUserId, toUserId } = action.payload;
-      const currentCart = { ...state };
+
+    mergeCarts: (state, action: PayloadAction<{ userId: string }>) => {
+      const { userId } = action.payload;
       
-      // Save current cart for the old user
+      // Get guest cart (no userId)
+      const guestCart = localStorageUtil.getCart() || { items: [], total: 0 };
+      // Get user's existing cart
+      const userCart = localStorageUtil.getCart(userId) || { items: [], total: 0 };
+      
+      console.log('Merging carts - Guest:', guestCart, 'User:', userCart);
+      
+      // Create a map to track items by product ID for efficient merging
+      const itemsMap = new Map<string, CartItem>();
+      
+      // First, add all items from user's existing cart
+      userCart.items.forEach((item: CartItem) => {
+        itemsMap.set(item.id, { ...item });
+      });
+      
+      // Then merge guest cart items
+      guestCart.items.forEach((guestItem: CartItem) => {
+        const existingItem = itemsMap.get(guestItem.id);
+        
+        if (existingItem) {
+          // If item exists in both carts, sum the quantities
+          existingItem.quantity += guestItem.quantity;
+        } else {
+          // If item only exists in guest cart, add it
+          itemsMap.set(guestItem.id, { ...guestItem });
+        }
+      });
+      
+      // Convert map back to array
+      const mergedItems = Array.from(itemsMap.values());
+      const mergedTotal = mergedItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      
+      // Update the state with merged cart
+      state.items = mergedItems;
+      state.total = mergedTotal;
+      
+      // Save merged cart to user's storage
+      localStorageUtil.setCart({ items: mergedItems, total: mergedTotal }, userId);
+      
+      // Clear guest cart after successful merge
+      localStorageUtil.clearCart();
+      
+      console.log('Merged cart result:', { items: mergedItems, total: mergedTotal });
+    },
+  switchUserCart: (state, action: PayloadAction<{ fromUserId?: string; toUserId?: string }>) => {
+      const { fromUserId, toUserId } = action.payload;
+      const currentCart = { items: [...state.items], total: state.total };
+      
+      // Save current cart for the old user (if any)
       if (fromUserId) {
         localStorageUtil.setCart(currentCart, fromUserId);
       }
       
-      // Load cart for the new user
-
-      const guestCart = localStorageUtil.getCart() || { items: [], total: 0 };
+      // Load cart for the new user (or guest)
       const newCart = localStorageUtil.getCart(toUserId) || { items: [], total: 0 };
-      const combinedItems = 
-
-            console.log(`newCart ${newCart}`)
       state.items = newCart.items;
       state.total = newCart.total;
-
+      
+      console.log(`Switched cart - From: ${fromUserId || 'guest'}, To: ${toUserId || 'guest'}`);
     }
   },
-  
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart, loadCart,
+export const { addToCart, removeFromCart, updateQuantity, clearCart, loadCart, mergeCarts,
   switchUserCart } = cartSlice.actions;
 export default cartSlice.reducer;
