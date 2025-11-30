@@ -20,9 +20,12 @@ const ProfilePage = () => {
     });
 
     // Redirect if not logged in
-    useEffect(() => {
+useEffect(() => {
         if (!isLoggedIn) {
-            router.push('/login');
+            const timer = setTimeout(() => {
+                router.push('/login');
+            }, 100);
+            return () => clearTimeout(timer);
         }
     }, [isLoggedIn, router]);
 

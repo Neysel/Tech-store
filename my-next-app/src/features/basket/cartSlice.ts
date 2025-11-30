@@ -28,23 +28,30 @@ const cartSlice = createSlice({
       
       if (existingItem) {
         existingItem.quantity += 1;
-          // console.log('Increased quantity for existing item:', existingItem);
       } else {
         state.items.push({ ...item, quantity: 1 });
-        //  console.log('Added new item to cart:', newItem);
       }
       
       state.total = state.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-        // console.log('Updated cart state:', state);
 
-      localStorageUtil.setCart(state, userId);
+       // Save to localStorage
+      if (userId) {
+        localStorageUtil.setCart({ items: state.items, total: state.total }, userId);
+      } else {
+        localStorageUtil.setCart({ items: state.items, total: state.total });
+      }
     },
     removeFromCart: (state, action: PayloadAction<{ id: string, userId?: string }>) => {
       const { id, userId } = action.payload;
       state.items = state.items.filter(item => item.id !== id);
       state.total = state.items.reduce((total, item) => total + (item.price * item.quantity), 0);
       
-      localStorageUtil.setCart(state, userId);
+       // Save to localStorage
+      if (userId) {
+        localStorageUtil.setCart({ items: state.items, total: state.total }, userId);
+      } else {
+        localStorageUtil.setCart({ items: state.items, total: state.total });
+      }
     },
     updateQuantity: (state, action: PayloadAction<{ id: string; quantity: number; userId?: string }>) => {
       const { id, quantity, userId } = action.payload;
@@ -53,7 +60,12 @@ const cartSlice = createSlice({
         item.quantity = quantity;
         state.total = state.items.reduce((total, item) => total + (item.price * item.quantity), 0);
         
-        localStorageUtil.setCart(state, userId);
+         // Save to localStorage
+      if (userId) {
+        localStorageUtil.setCart({ items: state.items, total: state.total }, userId);
+      } else {
+        localStorageUtil.setCart({ items: state.items, total: state.total });
+      }
       }
     },
     clearCart: (state, action: PayloadAction<{ userId?: string }>) => {
@@ -61,8 +73,13 @@ const cartSlice = createSlice({
       state.items = [];
       state.total = 0;
       
-      localStorageUtil.clearCart(userId);
+      if (userId) {
+        localStorageUtil.clearCart(userId);
+      } else {
+        localStorageUtil.clearCart();
+      }
     },
+    
      loadCart: (state, action: PayloadAction<{ userId?: string }>) => {
       const { userId } = action.payload;
       const savedCart = localStorageUtil.getCart(userId);
@@ -85,12 +102,20 @@ const cartSlice = createSlice({
       }
       
       // Load cart for the new user
+
+      const guestCart = localStorageUtil.getCart() || { items: [], total: 0 };
       const newCart = localStorageUtil.getCart(toUserId) || { items: [], total: 0 };
+      const combinedItems = 
+
+            console.log(`newCart ${newCart}`)
       state.items = newCart.items;
       state.total = newCart.total;
+
     }
   },
+  
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart, loadCart,
+  switchUserCart } = cartSlice.actions;
 export default cartSlice.reducer;

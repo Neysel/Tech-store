@@ -36,7 +36,7 @@ const MainPage = () => {
     return (
         <div className={style.homePage}>
             <Header/>
-            <section className={style.section1}>
+            <section className={style.section_1}>
                 <div className={style.section1_wrapper}>
                     <div className={style.container}>
                     <div className={style.main_content}>
@@ -51,7 +51,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </section>
-            <section className={style.section2}>
+            <section className={style.section_2}>
                 <div className={style.category_section}>
                     <div className={style.subcategory_section}> 
                         <div>
@@ -72,9 +72,11 @@ const MainPage = () => {
                     </div>
 
                 </div>
-                {/* <Boxes img={headphoneImg} title='HEADPHONES' link=''/>
-                <Boxes img={speakersImg} title='SPEAKERS' link=''/>
-                <Boxes img={earphonesImg} title='EARPHONES' link=''/> */}
+
+            </section>
+            {/* ads section */}
+            <section className={style.section_3}>
+
             </section>
             <footer/>
         </div>

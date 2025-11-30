@@ -1,7 +1,7 @@
 .homePage {
   width: 100%;
 }
-.section1 {
+.section_1 {
   position: relative;
   background-color: black;
 }
@@ -69,7 +69,7 @@
   background-color: #0285ff;
 }
 
-.section2 {
+.section_2 {
   max-width: 1440px;
   width: 100%;
   margin: 104px auto;
