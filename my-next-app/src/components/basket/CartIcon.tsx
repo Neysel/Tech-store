@@ -11,7 +11,7 @@ export default function CartIcon() {
   console.log('CartIcon - Items:', items, 'Total items:', itemCount);
 
   return (
-    <Link href="/basket" className="relative p-4 bg-gray-100 rounded-lg">
+    <div  className="relative p-4 rounded-lg">
       <div className="flex items-center space-x-2">
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -29,6 +29,6 @@ export default function CartIcon() {
           Total: ${total.toFixed(2)}
         </div>
       )}
-    </Link>
+    </div>
   );
 }
