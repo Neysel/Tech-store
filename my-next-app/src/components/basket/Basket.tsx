@@ -8,13 +8,14 @@ import { RootState } from '@/store';
 import { CartItem, CartState } from '@/interfaces/basket';
 import Header from '../header/Header';
 import { checkAuth, logout } from '@/features/auth/authSlice';
+import { useRouter } from 'next/navigation';
 
 const Basket = () => {
 
      const { items, total } = useAppSelector((state: RootState) => state.cart);
-    const { currentUser, isLoggedIn } = useAppSelector((state) => state.auth); 
-
+    const { currentUser, isLoggedIn } = useAppSelector((state) => state.auth);  
   const dispatch = useAppDispatch();
+   const router = useRouter(); 
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
@@ -33,8 +34,8 @@ const Basket = () => {
     }
     
     // Proceed with checkout logic
-    console.log('Proceeding to checkout for user:', currentUser?.user_id );
-    // 
+    // console.log('Proceeding to checkout for user:', currentUser?.user_id );
+     router.push('/checkout');
   };
 
   if (items.length === 0) {

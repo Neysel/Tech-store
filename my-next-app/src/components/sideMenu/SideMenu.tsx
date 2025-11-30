@@ -155,7 +155,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
   return (
     <div className={style.sideMenu}>
       <h2>Filters</h2>
-      
+      <div>
       {/* Price Range Filter */}
       <div className={style.filterSection}>
         {/* <h3>Price Range</h3> */}
@@ -285,6 +285,33 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
       <button onClick={clearFilters} className={style.clearFiltersBtn}>
         Clear All Filters
       </button>
+
+      </div>
+
+      <div>
+         <nav className={style.nav}>
+                    <a href="/products/all_products" className={style.navLink}>
+                        All products
+                    </a>
+                   <a href="/products/headphones" className={style.navLink}>
+                        Headphones
+                    </a>
+                    <a href="/products/microphone_stands" className={style.navLink}>
+                        Microphone stands
+                    </a>
+                    <a href="/products/microphones" className={style.navLink}>
+                        Microphones
+                    </a>
+                    <a href="/products/portable_loudspeakers" className={style.navLink}>
+                        Portable loudspeakers
+                    </a>
+                    <a href="/products/earphones" className={style.navLink}>
+                        Earphones
+                    </a>
+                </nav>
+      </div>
+
+
     </div>
   );
 };
