@@ -6,6 +6,7 @@ import AuthSessionProvider from '@/providers/SessionProvider'
 import CartIcon from '@/components/basket/CartIcon'
 import CartManager from '../components/cart/CartManager'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
