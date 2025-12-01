@@ -125,76 +125,48 @@ const MainPage = () => {
 
             {/* Ad Section 1 - Special Offer */}
             <section className={`py-16 text-white ${style.cyberpunkAd}`}>
-                <div className="container mx-auto px-4 text-center relative z-10">
+            <Link href="/products/all_products?sale=true">
+            <div className={ `container mx-auto px-4 text-center relative z-10 ${style.cyberpunkAd_container}`}>
                     <h2 className="text-4xl font-bold mb-4" style={{
-                        background: 'linear-gradient(45deg, #00ffff, #0099ff)',
+                        // background: 'linear-gradient(45deg, #00ffff, #0099ff)',
                         WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
+                        // WebkitTextFillColor: 'transparent',
                         backgroundClip: 'text'
                     }}>
-                        SUMMER CYBER SALE
+                        SUMMER SALE
                     </h2>
-                    <p className="text-xl mb-6 max-w-2xl mx-auto text-cyan-100">
+                    <p className="text-xl mb-6 max-w-2xl mx-auto text-cyan-100 ">
                         Get up to 50% off on selected audio gear. Limited time neural network offer!
                     </p>
                     <div className="flex justify-center gap-4 mb-8">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 text-black px-6 py-3 rounded-lg border border-cyan-400">
+                        <span className="text-2xl font-bold bg-gradient-to-r">
                             50% OFF
                         </span>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 text-black px-6 py-3 rounded-lg border border-purple-400">
+                        <span className="text-2xl font-bold bg-gradient-to-r">
                             FREE SHIPPING
                         </span>
                     </div>
-                    <Link href="/products/all_products?sale=true">
+                    
                         <button className={style.cyberpunkButton}>
-                            ACTIVATE DEAL
+                            ACTIVATE DEAL  <svg width="26px" height="26px" viewBox="-19.04 0 75.804 75.804" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#0c2c67"></path> </g> </g></svg>
                         </button>
-                    </Link>
-                </div>
+                      </div>
+                  </Link>
             </section>
 
             {/* Ad Section 2 - New Arrivals */}
             <section className={`py-20 text-white ${style.cyberpunkAd}`}>
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                        <div>
-                            <h2 className="text-4xl font-bold mb-6" style={{
-                                background: 'linear-gradient(45deg, #00ffff, #0099ff)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                backgroundClip: 'text'
-                            }}>
-                                NEURAL NETWORK SERIES
-                            </h2>
-                            <p className="text-xl mb-6 text-cyan-100">
-                                Discover our latest collection of premium audio equipment with quantum-level technology and superior sound quality.
-                            </p>
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-center text-cyan-100">
-                                    <span className="w-3 h-3 bg-cyan-500 rounded-full mr-3 animate-pulse"></span>
-                                    AI-enhanced noise cancellation
-                                </li>
-                                <li className="flex items-center text-cyan-100">
-                                    <span className="w-3 h-3 bg-cyan-500 rounded-full mr-3 animate-pulse"></span>
-                                    Quantum battery technology
-                                </li>
-                                <li className="flex items-center text-cyan-100">
-                                    <span className="w-3 h-3 bg-cyan-500 rounded-full mr-3 animate-pulse"></span>
-                                    Neural interface compatibility
-                                </li>
-                            </ul>
-                            <Link href="/products/all_products?new=true">
-                                <button className={style.cyberpunkButton}>
-                                    EXPLORE NEURAL TECH
-                                </button>
-                            </Link>
+                <div className={`container mx-auto px-4 ${style.cyberpunkAd_container_two_parts_container}`}>
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 ${style.cyberpunkAd_wrapper}`}>
+
+                        {/* first part */}
+                         <Link href="https://www.youtube.com/" target="_blank">
+                        <div className={style.image_podcast_ad}>                            
                         </div>
-                        <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 text-center h-64 flex items-center justify-center border border-cyan-400 relative overflow-hidden">
-                            <div className="relative z-10">
-                                <span className="text-6xl mb-4 block">⚡</span>
-                                <p className="text-xl font-semibold text-black">QUANTUM AUDIO GEAR</p>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 animate-pulse"></div>
+                        </Link>
+
+                        {/* second part */}
+                         <div className={style.image_empty_ad}>                            
                         </div>
                     </div>
                 </div>
