@@ -181,12 +181,12 @@ const MainPage = () => {
                         WebkitTextFillColor: 'transparent',
                         backgroundClip: 'text'
                     }}>
-                        TRUSTED BY CYBER CORPS
+                       PARTNERS
                     </h2>
                     
                     <div className="relative overflow-hidden">
-                        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-transparent to-cyan-900 z-10"></div>
-                        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-transparent to-cyan-900 z-10"></div>
+                        {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-transparent to-cyan-900 z-10"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-transparent to-cyan-900 z-10"></div> */}
                         
                         <div className={`${style.partners_scrolling_section_items_array} ${style['animate-scroll']}`}>
                             {partners.map((partner) => (
