@@ -44,13 +44,14 @@ input:focus {
   text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
   letter-spacing: 1px;
   position: relative;
-  margin: 40px 0 60px;
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
 
 .checkout h2::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -392,10 +393,11 @@ input:focus {
 @media (max-width: 768px) {
   .checkout h2 {
     font-size: 2rem;
-    margin: 30px 0 40px;
+    padding: 20px 0 10px;
   }
   
   .card {
+    margin-top: 20px;
     padding: 20px;
   }
   

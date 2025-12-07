@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
             <div className={style.content}>
               <p className={style.text}>
                 At <span className={style.accent}>Techero Sound</span>, we understand that privacy in the cyber age 
-                is paramount. Our Quantum Privacy Protocol represents the most advanced 
+                is paramount. Our Privacy Protocol represents the most advanced 
                 data protection system in existence, combining quantum encryption, neural 
                 anonymization, and temporal data management to ensure your information 
                 remains secure across all dimensions.
@@ -379,7 +379,7 @@ const PrivacyPolicy = () => {
             <div className={style.contactContent}>
               <p className={style.text}>
                 For privacy-related inquiries or to exercise your rights, contact our 
-                Quantum Privacy Officer:
+                Privacy Officer:
               </p>
               
               <div className={style.contactInfo}>
@@ -395,7 +395,7 @@ const PrivacyPolicy = () => {
               </div>
               
               <p className={style.updateNote}>
-                <strong>Note:</strong> This Quantum Privacy Protocol may be updated to 
+                <strong>Note:</strong> This Privacy Protocol may be updated to 
                 reflect new technological capabilities. Changes will be communicated 
                 through quantum entanglement notifications 30 days before taking effect.
               </p>
@@ -408,7 +408,7 @@ const PrivacyPolicy = () => {
               <h2 className={style.acceptanceTitle}>ACCEPTANCE OF PROTOCOL</h2>
               <p className={style.acceptanceText}>
                 By using Techero products and services, you acknowledge and consent to 
-                this Quantum Privacy Protocol. Your continued use after protocol updates 
+                this Privacy Protocol. Your continued use after protocol updates 
                 constitutes acceptance of the revised terms.
               </p>
               <div className={style.acceptanceDate}>

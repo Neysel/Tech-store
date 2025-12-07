@@ -588,3 +588,17 @@
 .productGrid::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #2563eb, #7c3aed);
 }
+
+.aside_sidemenu {
+
+}
+
+.aside_ads {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-image: url(../../../public/assets/ads/AdobeStock_adsPreview.png);
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

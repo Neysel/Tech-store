@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url("../../../assets/background_assets/main.jpeg");
+  background-image: url("../../../public/assets/background_assets/main.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right 0 bottom 0;
@@ -273,19 +273,19 @@
 
 /* Specific category backgrounds */
 .headphones_pic {
-  background-image: url("../../../assets/background_assets/headphones_preview.png");
+  background-image: url("../../../public/assets/background_assets/headphones_preview.png");
 }
 
 .loudspeakers_pic {
-  background-image: url("../../../assets/background_assets/background_loudspeaker.png");
+  background-image: url("../../../public/assets/background_assets/background_loudspeaker.png");
 }
 
 .microphones_pic {
-  background-image: url("../../../assets/background_assets/microphones.png");
+  background-image: url("../../../public/assets/background_assets/microphones.png");
 }
 
 .earphones_pic {
-  background-image: url("../../../assets/background_assets/earphones_preview.png");
+  background-image: url("../../../public/assets/background_assets/earphones_preview.png");
 }
 
 /* Cyberpunk Partners Section */
@@ -432,7 +432,7 @@
 }
 
 .image_podcast_ad {
-  background: url(../../../assets/ads/podcast_ad.jpeg);
+  background: url(../../../public/assets/ads/podcast_ad.jpeg);
   /* min-width: 400px; */
   /* width:; */
   background-repeat: no-repeat;
@@ -448,7 +448,7 @@
 }
 
 .image_empty_ad {
-    background: url(../../../assets/ads/wmremove-transformed.png);
+    background: url(../../../public/assets/ads/wmremove-transformed.png);
   /* min-width: 400px; */
   /* width:; */
   background-repeat: no-repeat;

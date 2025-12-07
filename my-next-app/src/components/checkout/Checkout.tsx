@@ -6,7 +6,8 @@ import { clearCart } from '@/features/basket/cartSlice';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '../header/Header';
-import style from './Checkout.module.css'
+import style from './Checkout.module.css';
+
 
 const CheckoutPage = () => {
   const { items, total } = useAppSelector((state) => state.cart);
@@ -71,14 +72,16 @@ const CheckoutPage = () => {
     }
   };
 
-  if (!isLoggedIn || items.length === 0) {
+   if (!isLoggedIn || items.length === 0) {
     return (
       <>
         <Header />
-        <div className="max-w-4xl mx-auto p-6">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Redirecting...</h2>
-            <p>Please wait while we redirect you.</p>
+        <div className={ style.checkout}>
+          <div className={ style.container}>
+            <div className={ style.redirectMessage}>
+              <h2>Redirecting...</h2>
+              <p>Please wait while we redirect you.</p>
+            </div>
           </div>
         </div>
       </>
@@ -88,188 +91,198 @@ const CheckoutPage = () => {
   return (
     <>
       <Header />
-      <div className="max-w-4xl mx-auto p-6">
-        <h2 className="text-3xl font-bold mb-6">Checkout</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Customer Information */}
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Customer Information</h3>
-              
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email *
+      <div className={ style.checkout}>
+        <div className={ style.container}>
+          <h2>Checkout</h2>
+          
+          <div className={ style.checkoutLayout}>
+            {/* Left Column - Customer Info & Payment */}
+            <div>
+              {/* Customer Information */}
+              <div className={ style.card}>
+                <h3 className={ style.cardTitle}>Customer Information</h3>
+                
+                <div className={ style.formGroup}>
+                  <label className={`${ style.label} ${ style.required}`}>
+                    Email
                   </label>
                   <input
                     type="email"
                     name="email"
                     value={customerInfo.email}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className={ style.input}
                     required
+                    placeholder="your@email.com"
                   />
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Address *
+                <div className={ style.formGroup}>
+                  <label className={`${ style.label} ${ style.required}`}>
+                    Address
                   </label>
                   <input
                     type="text"
                     name="address"
                     value={customerInfo.address}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className={ style.input}
                     placeholder="Street address"
                     required
                   />
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      City *
+                <div className={ style.grid}>
+                  <div className={ style.formGroup}>
+                    <label className={`${ style.label} ${ style.required}`}>
+                      City
                     </label>
                     <input
                       type="text"
                       name="city"
                       value={customerInfo.city}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className={ style.input}
                       required
                     />
                   </div>
                   
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      ZIP Code *
+                  <div className={ style.formGroup}>
+                    <label className={`${ style.label} ${ style.required}`}>
+                      ZIP Code
                     </label>
                     <input
                       type="text"
                       name="zipCode"
                       value={customerInfo.zipCode}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className={ style.input}
                       required
                     />
                   </div>
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Country *
+                <div className={ style.formGroup}>
+                  <label className={`${ style.label} ${ style.required}`}>
+                    Country
                   </label>
                   <input
                     type="text"
                     name="country"
                     value={customerInfo.country}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className={ style.input}
                     required
                   />
                 </div>
               </div>
-            </div>
 
-            {/* Payment Method */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Payment Method</h3>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <input
-                    type="radio"
-                    id="card"
-                    name="payment"
-                    defaultChecked
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                  />
-                  <label htmlFor="card" className="ml-3 block text-sm font-medium text-gray-700">
-                    Credit/Debit Card
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="radio"
-                    id="paypal"
-                    name="payment"
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                  />
-                  <label htmlFor="paypal" className="ml-3 block text-sm font-medium text-gray-700">
-                    PayPal
-                  </label>
+              {/* Payment Method */}
+              <div className={ style.card}>
+                <h3 className={ style.cardTitle}>Payment Method</h3>
+                <div className={ style.paymentMethods}>
+                  <div className={ style.paymentOption}>
+                    <input
+                      type="radio"
+                      id="card"
+                      name="payment"
+                      defaultChecked
+                      className={ style.radio}
+                    />
+                    <label htmlFor="card" className={ style.paymentLabel}>
+                      Credit/Debit Card
+                    </label>
+                  </div>
+                  <div className={ style.paymentOption}>
+                    <input
+                      type="radio"
+                      id="paypal"
+                      name="payment"
+                      className={ style.radio}
+                    />
+                    <label htmlFor="paypal" className={ style.paymentLabel}>
+                      PayPal
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Order Summary */}
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
-              
-              <div className="space-y-4 max-h-96 overflow-y-auto">
-                {items.map((item) => (
-                  <div key={item.id} className="flex items-center justify-between border-b pb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">
-                        {item.image ? (
-                          <img 
-                            src={item.image} 
-                            alt={item.name}
-                            className="w-12 h-12 object-cover rounded"
-                          />
-                        ) : (
-                          <span className="text-xs text-gray-500">No image</span>
-                        )}
+            {/* Right Column - Order Summary */}
+            <div>
+              <div className={ style.card}>
+                <h3 className={ style.cardTitle}>Order Summary</h3>
+                
+                <div className={ style.orderItems}>
+                  {items.map((item) => (
+                    <div key={item.id} className={ style.orderItem}>
+                      <div className={ style.itemInfo}>
+                        <div className={ style.itemImageContainer}>
+                          {item.image ? (
+                            <img 
+                              src={item.image} 
+                              alt={item.name}
+                              className={ style.itemImage}
+                            />
+                          ) : (
+                            <div className={ style.itemImage}>No image</div>
+                          )}
+                        </div>
+                        <div className={ style.itemDetails}>
+                          <h4>{item.name}</h4>
+                          <p className={ style.itemQuantity}>Qty: {item.quantity}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-sm">{item.name}</h4>
-                        <p className="text-gray-600 text-sm">Qty: {item.quantity}</p>
+                      <div className={ style.itemPrice}>
+                        ${(item.price * item.quantity).toFixed(2)}
                       </div>
                     </div>
-                    <p className="font-semibold">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="mt-6 space-y-2">
-                <div className="flex justify-between text-lg">
-                  <span className="font-semibold">Total:</span>
-                  <span className="font-bold text-xl">${total.toFixed(2)}</span>
+                  ))}
                 </div>
+                
+                <div className={ style.totalSection}>
+                  <div className={ style.totalRow}>
+                    <span>Subtotal</span>
+                    <span>${total.toFixed(2)}</span>
+                  </div>
+                  <div className={ style.totalRow}>
+                    <span>Shipping</span>
+                    <span>$0.00</span>
+                  </div>
+                  <div className={ style.totalRow}>
+                    <span>Tax</span>
+                    <span>$0.00</span>
+                  </div>
+                  <div className={ style.totalRow}>
+                    <span className={ style.grandTotal}>Grand Total</span>
+                    <span className={ style.grandTotalAmount}>${total.toFixed(2)}</span>
+                  </div>
+                </div>
+
+                {/* Payment Button */}
+                <button
+                  onClick={handlePayment}
+                  disabled={isProcessing}
+                  className={ style.paymentButton}
+                >
+                  {isProcessing ? (
+                    <>
+                      <span className={ style.spinner}></span>
+                      Processing Payment...
+                    </>
+                  ) : (
+                    `Pay $${total.toFixed(2)}`
+                  )}
+                </button>
+
+                <Link 
+                  href="/basket" 
+                  className={ style.backLink}
+                >
+                  ← Back to Basket
+                </Link>
               </div>
             </div>
-
-            {/* Checkout Button */}
-            <button
-              onClick={handlePayment}
-              disabled={isProcessing}
-              className={`w-full py-4 px-6 rounded-lg font-semibold text-lg ${
-                isProcessing
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-green-600 hover:bg-green-700 text-white'
-              }`}
-            >
-              {isProcessing ? (
-                <div className="flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Processing Payment...
-                </div>
-              ) : (
-                `Pay $${total.toFixed(2)}`
-              )}
-            </button>
-
-            <Link 
-              href="/basket" 
-              className="block text-center text-blue-600 hover:text-blue-800 font-medium"
-            >
-              ← Back to Basket
-            </Link>
           </div>
         </div>
       </div>

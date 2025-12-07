@@ -10,10 +10,10 @@
       "price": 129.99,
       "currency": "USD",
       "in_stock": true,
-      "image": "./../assets/headphones/adam-birkett-vISNAATFXlE-unsplash.jpg",
+      "image": "/assets/headphones/adam-birkett-vISNAATFXlE-unsplash.jpg",
       "description": "Experience high-fidelity sound with the ELECTRO-X200 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
       "specifications": {
-        "color": "Black",
+        "color": "White",
         "noise_cancellation": true,
         "connectivity": ["Wire"]
       },

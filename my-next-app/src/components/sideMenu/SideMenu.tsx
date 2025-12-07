@@ -341,7 +341,6 @@ const pathname = usePathname();
         </nav>
       </div>
 
-
     </div>
   );
 };

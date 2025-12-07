@@ -206,7 +206,6 @@ import Footer from "../footer/footer";
         <div className={style.all_products}>
                 <Header/>
                 {/* <h3>{category ? `${category}` : 'All Products'}</h3> */}
-                {/* Additional content and structure for the Headphones component can be added here */}
         
         <div className={style.container}>
             <div className={style.componentWrapper}>
@@ -214,7 +213,7 @@ import Footer from "../footer/footer";
 
         {/* <div className={style.breadcrumbWrapper}>
         </div> */}
-        {/* Updated SideMenu with all filter props */}
+        <div className={style.aside_sidemenu}>
           <SideMenu
             products={products}
             setFilteredProducts={() => {}}
@@ -227,6 +226,12 @@ import Footer from "../footer/footer";
             selectedColors={selectedColors}
             setSelectedColors={setSelectedColors}
           />
+          <div className={style.aside_ads}>
+            {/* asdasdds */}
+          </div>
+        </div>
+          
+        
 
         <div className={style.productsWrapper}>
             <div className={style.topBar}>
