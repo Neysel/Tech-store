@@ -93,9 +93,9 @@ export const Footer = () => {
                             </h4>
                             <ul className={`space-y-3 ${style.support_list}`}>
                                 {[
-                                    { href: "/contact", label: "Contact" },
+                                    { href: "/contacts", label: "Contacts" },
                                     { href: "/shipping", label: "Shipping" },
-                                    { href: "/returns", label: "Returns" },
+                                    // { href: "/returns", label: "Returns" },
                                     { href: "/warranty", label: "Warranty" }
                                 ].map((item) => (
                                     <li key={item.href}>
@@ -174,10 +174,10 @@ export const Footer = () => {
                                 <Link href="/privacy" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
                                     Privacy Protocol
                                 </Link>
-                                <Link href="/terms" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
+                                <Link href="/privacy" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
                                     Terms of Service
                                 </Link>
-                                <Link href="/cookies" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
+                                <Link href="/privacy" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
                                     Cookie
                                 </Link>
                             </div>

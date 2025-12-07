@@ -5,6 +5,7 @@ import { checkAuth, logout, updateProfile } from '@/features/auth/authSlice';
 import { useRouter } from 'next/navigation';
 import style from './profile.module.css';
 import Header from '@/components/header/Header';
+import Footer from '@/components/footer/footer';
 
 const ProfilePage = () => {
     const dispatch = useAppDispatch();
@@ -216,6 +217,7 @@ useEffect(() => {
                 </div>
             </aside>
         </div>
+        <Footer/>
         </>
     );
 };

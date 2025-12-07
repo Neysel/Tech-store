@@ -8,6 +8,7 @@
     import { Product } from "../../interfaces/product";
 import { useDebounce } from "@/hooks/debounce";
 import Header from "../header/Header";
+import Footer from "../footer/footer";
 
 
     interface AllProductsProps {
@@ -279,9 +280,8 @@ import Header from "../header/Header";
               <div id="product_grid" className={style.productGrid}>
                 {currentProducts.length > 0 ? (
                   currentProducts.map((product) => (
-                    <div key={product.product_id} className={style.productCard}>
-                      <Link 
-                        href={{
+                    <div>
+                    <Link  href={{
                         pathname: '/products/all_products/product_item',
                         query: { 
                           id: product.product_id,
@@ -290,7 +290,10 @@ import Header from "../header/Header";
                         // http://localhost:3000/products/all_products/product_item?id=ELEC-001
                       }}
                        as={`/products/${category ? category.toLowerCase() : 'all_products'}/product_item?id=${product.product_id}`}
-                      
+                      >
+                    <div key={product.product_id} className={style.productCard}>
+                      <div 
+
                       id={product.product_id}>
                         {product.image ? (
                           <Image
@@ -316,13 +319,15 @@ import Header from "../header/Header";
                             )}
                           </div>
                         )}
-                      </Link>
+                      </div>
                       <button 
                         className={style.cart_functions}
                         disabled={!product.in_stock}
                       >
                         {product.in_stock ? "Add to Cart" : "Out of Stock"}
                       </button>
+                    </div>
+                    </Link>
                     </div>
                   ))
                 ) : (
@@ -364,6 +369,7 @@ import Header from "../header/Header";
                     </div>
                  {/* )}             */}
                 </div>
+                <Footer />
             </div>
         );
     }
