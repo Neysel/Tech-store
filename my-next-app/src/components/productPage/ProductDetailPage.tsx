@@ -8,6 +8,7 @@ import style from './ProductDetailPage.module.css'
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { addToCart } from '@/features/basket/cartSlice';
 import Header from '../header/Header';
+import Footer from '../footer/footer';
 
 export default function ProductItemPage() {
   const searchParams = useSearchParams();
@@ -50,6 +51,7 @@ export default function ProductItemPage() {
           <div className={style.loadingSpinner}></div>
           <p style={{ color: '#94a3b8' }}>Loading product...</p>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -63,6 +65,7 @@ export default function ProductItemPage() {
           <p className={style.errorMessage}>The product you're looking for doesn't exist.</p>
           <a href="/products/all_products" className={style.backButton}>Browse Products</a>
         </div>
+         <Footer />
       </div>
     );
   }
@@ -187,6 +190,7 @@ export default function ProductItemPage() {
           )}
         </div>
       </div>
+              <Footer />
     </>
   );
 }
