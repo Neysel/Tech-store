@@ -10,7 +10,7 @@
       "price": 129.99,
       "currency": "USD",
       "in_stock": true,
-      "image": "",
+      "image": "./../assets/headphones/adam-birkett-vISNAATFXlE-unsplash.jpg",
       "description": "Experience high-fidelity sound with the ELECTRO-X200 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
       "specifications": {
         "color": "Black",
@@ -50,6 +50,21 @@
         "noise_cancellation": true
       },
       "warranty_months": 24
+    },
+    {
+      "product_id": "MOB-102",
+      "category": "Microphones",
+      "name": "Microphone PRO-Vocal XLR",
+      "brand": "SoundMaster",
+      "price": 150.00,
+      "in_stock": true,
+            "image": "",
+            "description": "The PRO-Vocal XLR microphone offers superior sound quality and durability, perfect for studio recordings and live performances.",
+      "specifications": {
+        "color": "Silver",
+        "connectivity": ["XLR"]
+      },
+      "warranty_months": 36
     }
   ]
 }
