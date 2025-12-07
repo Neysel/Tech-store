@@ -67,10 +67,10 @@ export const Footer = () => {
                             </h4>
                             <ul className={`space-y-3 ${style.categories_list}`}>
                                 {[
-                                    { href: "/products/headphones", label: "Cyber Headphones" },
-                                    { href: "/products/earphones", label: "Neural Earphones" },
-                                    { href: "/products/microphones", label: "Quantum Mics" },
-                                    { href: "/products/portable_loudspeakers", label: "Holo-Speakers" }
+                                    { href: "/products/headphones", label: "Headphones" },
+                                    { href: "/products/earphones", label: "Earphones" },
+                                    { href: "/products/microphones", label: "Microphones" },
+                                    { href: "/products/portable_loudspeakers", label: "Portable Loudspeakers" }
                                 ].map((item) => (
                                     <li key={item.href}>
                                         <Link 
@@ -93,10 +93,10 @@ export const Footer = () => {
                             </h4>
                             <ul className={`space-y-3 ${style.support_list}`}>
                                 {[
-                                    { href: "/contact", label: "Neural Support" },
-                                    { href: "/shipping", label: "Drone Delivery" },
-                                    { href: "/returns", label: "Cyber Returns" },
-                                    { href: "/warranty", label: "Quantum Warranty" }
+                                    { href: "/contact", label: "Contact" },
+                                    { href: "/shipping", label: "Shipping" },
+                                    { href: "/returns", label: "Returns" },
+                                    { href: "/warranty", label: "Warranty" }
                                 ].map((item) => (
                                     <li key={item.href}>
                                         <Link 
@@ -178,7 +178,7 @@ export const Footer = () => {
                                     Terms of Service
                                 </Link>
                                 <Link href="/cookies" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
-                                    Cookie Matrix
+                                    Cookie
                                 </Link>
                             </div>
                         </div>

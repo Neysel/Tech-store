@@ -1,5 +1,5 @@
 /* Global Container */
-.all_products {
+.headphones {
   min-height: 100vh;
   /* background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); */
   padding-bottom: 40px;
@@ -19,7 +19,7 @@
 }
 
 /* Header Title */
-.all_products h3 {
+.headphones h3 {
   color: #ffffff;
   font-size: 2.5rem;
   font-weight: 700;
@@ -34,7 +34,7 @@
   position: relative;
 }
 
-.all_products h3::after {
+.headphones h3::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -302,7 +302,7 @@
   grid-column: 1 / -1;
   text-align: center;
   padding: 60px 20px;
-  color: #94a3b8;
+  color: #ffffff;
   font-size: 1.125rem;
   background: rgba(15, 23, 42, 0.5);
   border-radius: 16px;
@@ -409,7 +409,7 @@
 }
 
 .loadingText {
-  color: #3b82f6;
+  color: #ffffff;
   font-size: 1.125rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -540,7 +540,7 @@
     padding: 20px;
   }
   
-  .all_products h3 {
+  .headphones h3 {
     font-size: 2rem;
     /* padding: 30px 15px 15px; */
   }

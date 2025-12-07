@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { Product } from '../../interfaces/product';
 import style from './sideMenu.module.css';
+import { usePathname } from 'next/navigation';
 
 interface SideMenuProps {
   products: Product[];
@@ -27,6 +28,8 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     selectedColors,
     setSelectedColors
   } = props;
+
+const pathname = usePathname(); 
 
   let minValue = 40
   let currentMaxValue = 400
@@ -152,6 +155,15 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     setPriceRange([priceStats.min, priceStats.max]);
   };
 
+
+  const isActiveSimple = (href: string) => {
+    // For category links like "/products/headphones"
+    
+    if (!pathname) return false;
+    const category = href.replace('/products/', '');
+    return pathname.includes(`/products/${category}`);
+  };
+  
   return (
     <div className={style.sideMenu}>
       <h2>Filters</h2>
@@ -289,26 +301,44 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
       </div>
 
       <div className='nav_module'>
-         <nav className={style.nav}>
-                    <a href="/products/all_products" className={style.navLink}>
-                        All products
-                    </a>
-                   <a href="/products/headphones" className={style.navLink}>
-                        Headphones
-                    </a>
-                    <a href="/products/microphone_stands" className={style.navLink}>
-                        Microphone stands
-                    </a>
-                    <a href="/products/microphones" className={style.navLink}>
-                        Microphones
-                    </a>
-                    <a href="/products/portable_loudspeakers" className={style.navLink}>
-                        Portable loudspeakers
-                    </a>
-                    <a href="/products/earphones" className={style.navLink}>
-                        Earphones
-                    </a>
-                </nav>
+ <nav className={style.nav}>
+          <a 
+            href="/products/all_products" 
+            className={`${style.navLink} ${isActiveSimple('/products/all_products') ? style.active : ''}`}
+          >
+            All products
+          </a>
+          <a 
+            href="/products/headphones" 
+            className={`${style.navLink} ${isActiveSimple('/products/headphones') ? style.active : ''}`}
+          >
+            Headphones
+          </a>
+          <a 
+            href="/products/microphone_stands" 
+            className={`${style.navLink} ${isActiveSimple('/products/microphone_stands') ? style.active : ''}`}
+          >
+            Microphone stands
+          </a>
+          <a 
+            href="/products/microphones" 
+            className={`${style.navLink} ${isActiveSimple('/products/microphones') ? style.active : ''}`}
+          >
+            Microphones
+          </a>
+          <a 
+            href="/products/portable_loudspeakers" 
+            className={`${style.navLink} ${isActiveSimple('/products/portable_loudspeakers') ? style.active : ''}`}
+          >
+            Portable loudspeakers
+          </a>
+          <a 
+            href="/products/earphones" 
+            className={`${style.navLink} ${isActiveSimple('/products/earphones') ? style.active : ''}`}
+          >
+            Earphones
+          </a>
+        </nav>
       </div>
 
 

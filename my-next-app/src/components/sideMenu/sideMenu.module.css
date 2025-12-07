@@ -721,19 +721,54 @@
 
 /* Price slider track fill */
 .sliderTrack {
-  background: linear-gradient(
-    to right,
-    rgba(59, 130, 246, 0.1) 0%,
-    rgba(59, 130, 246, 0.4) 50%,
-    rgba(59, 130, 246, 0.1) 100%
-  ) !important;
+  /* background: linear-gradient( */
+    /* to right, */
+    /* rgba(59, 130, 246, 0.1) 0%, */
+    /* rgba(59, 130, 246, 0.4) 50%, */
+    /* rgba(59, 130, 246, 0.1) 100% */
+  /* ) !important; */
+}
+
+
+.sliderTrack::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  /* background: linear-gradient(90deg, #3b82f6, #8b5cf6); */
+  border-radius: 3px;
+  left: var(--left-percent, 0%);
+  right: calc(100% - var(--right-percent, 100%));
+  transition: left 0.1s ease, right 0.1s ease;
 }
 
 /* Active state for navigation */
-.navLink[href*="/products/headphones"],
-.navLink[href*="/products/all_products"] {
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
-  border-left: 4px solid #3b82f6;
-  color: #ffffff;
-  font-weight: 600;
+/* .navLink[href="/products/headphones"], */
+/* .navLink[href="/products/all_products"], */
+/* .navLink[href="/products/microphone_stands"], */
+/* .navLink[href="/products/portable_loudspeakers"], */
+/* .navLink[href="/products/microphones"], */
+/* .navLink[href="/products/earphones"] { */
+  /* background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent); */
+  /* border-left: 4px solid #3b82f6; */
+  /* color: #ffffff; */
+  /* font-weight: 600; */
+/* } */
+
+
+.navLink.active {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent) !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding-left: 20px !important;
+  transform: none !important;
+}
+
+/* Remove hover effects for active links */
+.navLink.active:hover::before {
+  left: -100% !important;
+}
+
+.navLink.active:hover::after {
+  opacity: 0 !important;
 }
