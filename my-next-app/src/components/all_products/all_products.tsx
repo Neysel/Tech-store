@@ -202,9 +202,9 @@ import Header from "../header/Header";
 
     
         return (
-        <div className={style.headphones}>
+        <div className={style.all_products}>
                 <Header/>
-                <h3>{category ? `${category}` : 'All Products'}</h3>
+                {/* <h3>{category ? `${category}` : 'All Products'}</h3> */}
                 {/* Additional content and structure for the Headphones component can be added here */}
         
         <div className={style.container}>

@@ -1,5 +1,5 @@
 /* Global Container */
-.headphones {
+.all_products {
   min-height: 100vh;
   /* background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); */
   padding-bottom: 40px;
@@ -19,12 +19,12 @@
 }
 
 /* Header Title */
-.headphones h3 {
+.all_products h3 {
   color: #ffffff;
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  padding: 40px 20px 20px;
+  /* padding: 40px 20px 20px; */
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   background-clip: text;
@@ -34,7 +34,7 @@
   position: relative;
 }
 
-.headphones h3::after {
+.all_products h3::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -540,9 +540,9 @@
     padding: 20px;
   }
   
-  .headphones h3 {
+  .all_products h3 {
     font-size: 2rem;
-    padding: 30px 15px 15px;
+    /* padding: 30px 15px 15px; */
   }
   
   .pagination {

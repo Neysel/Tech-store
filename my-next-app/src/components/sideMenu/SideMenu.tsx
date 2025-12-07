@@ -288,7 +288,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
 
       </div>
 
-      <div>
+      <div className='nav_module'>
          <nav className={style.nav}>
                     <a href="/products/all_products" className={style.navLink}>
                         All products
