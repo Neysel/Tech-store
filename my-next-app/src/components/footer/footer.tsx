@@ -21,7 +21,7 @@ export const Footer = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
                         {/* Brand Column */}
-                        <div className="lg:col-span-2">
+                        <div className={`lg:col-span-2 ${style.relative_info_addres_section}`}>
                             <div className="flex items-center mb-6">
                                 <div className="relative">
                                     <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">

@@ -88,6 +88,7 @@ useEffect(() => {
                         Earphones
                     </a>
                 </nav>
+
             </aside>
 
             {/* Main Profile Content */}
@@ -213,9 +214,13 @@ useEffect(() => {
                 </div>
 
                 <div className={style.quickActions}>
-                    <h3>⚡ Quick Actions</h3>
+                    {/* <h3>⚡ Quick Actions</h3> */}
+                </div>
+                                <div className={style.sidemenu_ads}>
+
                 </div>
             </aside>
+            
         </div>
         <Footer/>
         </>

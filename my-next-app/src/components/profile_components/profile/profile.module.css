@@ -261,6 +261,17 @@
     font-size: 1.5rem;
 }
 
+.sidemenu_ads {
+    margin-top: 20px;
+    height: 300px;
+    background-image: url(../../../../public/assets/ads/your_ads_post_cat_headphones.png);
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgba(2, 179, 255, 0.1); */
+    /* border: 2px dashed rgba(2, 179, 255, 0.3); */
+    border-radius: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .profilePage {
