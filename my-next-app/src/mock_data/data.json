@@ -26,7 +26,7 @@
       "brand": "FashionCo",
       "price": 119.99,
       "in_stock": false,
-      "image": "",
+      "image": "/assets/headphones/totte-annerbrink-NehdOHCXsjs-unsplash.jpg",
       "description": "Stylish and comfortable headphones with superior sound quality, perfect for music lovers on the go.",
       "specifications": {
         "color": "Black",
@@ -35,6 +35,23 @@
         "connectivity": ["Bluetooth", "Wire"]
       },
       "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-002",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X700",
+      "brand": "AudioPhile",
+      "price": 199.99,
+      "in_stock": true,
+      "image": "/assets/headphones/AdobeStock_1404822196_Preview.jpeg",
+      "description": "Premium headphones with immersive sound experience, advanced noise cancellation, and long-lasting comfort for extended listening sessions.",
+      "specifications": {
+        "color": "Green",
+        "battery_life_hours": 40,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 36
     },
     {
       "product_id": "MOB-101",
