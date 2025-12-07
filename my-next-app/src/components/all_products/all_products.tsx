@@ -318,7 +318,7 @@ import Header from "../header/Header";
                         )}
                       </Link>
                       <button 
-                        className="cart_functions"
+                        className={style.cart_functions}
                         disabled={!product.in_stock}
                       >
                         {product.in_stock ? "Add to Cart" : "Out of Stock"}

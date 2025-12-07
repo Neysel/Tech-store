@@ -67,3 +67,33 @@
     display: flex;
     gap: 5px;
 }
+
+.support_list {
+    margin-top: 10px;
+}
+
+.newsletter_text {
+    margin-top: 10px;
+}
+
+.newsletter_text_email_input_wrapper {
+    margin-top: 10px;
+}
+
+.newsletter_text_email_input {
+    padding-left: 10px;
+}
+
+.newsletter_text_subscribe_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.social_links {
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.bottom_bar {
+    margin-top: 15px;
+}

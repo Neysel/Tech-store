@@ -91,7 +91,7 @@ export const Footer = () => {
                                 <span className="relative z-10">SUPPORT</span>
                                 <div className="absolute -bottom-1 left-0 w-12 h-1 bg-blue-400"></div>
                             </h4>
-                            <ul className="space-y-3">
+                            <ul className={`space-y-3 ${style.support_list}`}>
                                 {[
                                     { href: "/contact", label: "Neural Support" },
                                     { href: "/shipping", label: "Drone Delivery" },
@@ -118,19 +118,19 @@ export const Footer = () => {
                                 <span className="relative z-10">NEWSLETTER</span>
                                 <div className="absolute -bottom-1 left-0 w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                             </h4>
-                            <p className="text-gray-300 mb-6 text-sm">
+                            <p className={`text-gray-300 mb-6 text-sm ${style.newsletter_text}`}>
                                 Subscribe for cyber updates and neural offers
                             </p>
                             <div className="space-y-4">
-                                <div className="relative group">
+                                <div className={`relative group ${style.newsletter_text_email_input_wrapper}`}>
                                     <input 
                                         type="email" 
                                         placeholder="your@neural.net" 
-                                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 group-hover:border-cyan-500/50"
+                                        className={`w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 group-hover:border-cyan-500/50 ${style.newsletter_text_email_input}`}
                                     />
                                     <div className="absolute inset-0 rounded-lg border border-cyan-500/0 group-hover:border-cyan-500/30 transition-all duration-500 pointer-events-none"></div>
                                 </div>
-                                <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-cyan-500/25 relative overflow-hidden group">
+                                <button className={`w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-cyan-500/25 relative overflow-hidden group ${style.newsletter_text_subscribe_button}`}>
                                     <span className="relative z-10">SUBSCRIBE</span>
                                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </button>
@@ -139,7 +139,7 @@ export const Footer = () => {
                             {/* Social Links */}
                             <div className="mt-8">
                                 <h5 className="font-semibold text-gray-300 mb-4">CONNECT WITH US</h5>
-                                <div className="flex space-x-4">
+                                <div className={`flex space-x-4 ${style.social_links}`}>
                                     {[
                                         { icon: FaTwitter, color: "hover:text-cyan-400" },
                                         { icon: FaInstagram, color: "hover:text-purple-400" },
@@ -164,13 +164,13 @@ export const Footer = () => {
                         {/* Glowing bar effect */}
                         <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
                         
-                        <div className="flex flex-col md:flex-row justify-between items-center">
+                        <div className={`flex flex-col md:flex-row justify-between items-center ${style.bottom_bar}`}>
                             <p className="text-gray-400 text-sm">
                                 &copy; 2077 Techero Sound. All neural rights reserved.
                             </p>
                             
-                            <div className="flex space-x-6 mt-4 md:mt-0">
-                                <div className="mt-[200px] bg-blue-500 p-4">This should have 200px margin</div>
+                            <div className="flex space-x-6 mt-4 md:mt-0 gap-4">
+                                {/* <div className="mt-[200px] bg-blue-500 p-4">This should have 200px margin</div> */}
                                 <Link href="/privacy" className="text-gray-400 hover:text-cyan-300 text-sm transition-colors">
                                     Privacy Protocol
                                 </Link>
@@ -182,13 +182,7 @@ export const Footer = () => {
                                 </Link>
                             </div>
                         </div>
-                        
-                        {/* Tech badge */}
-                        <div className="text-center mt-6">
-                            <span className="inline-block px-3 py-1 bg-gray-900/50 border border-cyan-500/30 rounded-full text-xs text-cyan-300">
-                                ▲ CYBERPUNK AUDIO TECHNOLOGY v2.4.9
-                            </span>
-                        </div>
+                    
                     </div>
                 </div>
                 </div>
