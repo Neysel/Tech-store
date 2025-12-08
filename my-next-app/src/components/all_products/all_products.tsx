@@ -285,7 +285,7 @@ import Footer from "../footer/footer";
               <div id="product_grid" className={style.productGrid}>
                 {currentProducts.length > 0 ? (
                   currentProducts.map((product) => (
-                    <div>
+                    <div key={product.product_id}>
                     <Link  href={{
                         pathname: '/products/all_products/product_item',
                         query: { 

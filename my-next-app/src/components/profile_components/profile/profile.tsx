@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import style from './profile.module.css';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/footer';
+import Link from 'next/link';
 
 const ProfilePage = () => {
     const dispatch = useAppDispatch();
@@ -66,27 +67,27 @@ useEffect(() => {
             {/* Side Navigation */}
             <aside className={style.sidebar}>
                 <nav className={style.nav}>
-                    <a href="/products/all_products" className={style.navLink}>
+                    <Link href="/products/all_products" className={style.navLink}>
                         🎧 All Products
-                    </a>
-                    <a href="/products/orders" className={style.navLink}>
+                    </Link>
+                    {/* <a href="/products/orders" className={style.navLink}>
                         📦 Orders
-                    </a>
-                   <a href="/products/headphones" className={style.navLink}>
-                        Headphones
-                    </a>
-                    <a href="/products/microphone_stands" className={style.navLink}>
+                    </a> */}
+                   <Link href="/products/headphones" className={style.navLink}>
+                        Headphones  
+                    </Link>
+                    <Link href="/products/microphone_stands" className={style.navLink}>
                         Microphone stands
-                    </a>
-                    <a href="/products/microphones" className={style.navLink}>
+                    </Link>
+                    <Link href="/products/microphones" className={style.navLink}>
                         Microphones
-                    </a>
-                    <a href="/products/portable_loudspeakers" className={style.navLink}>
+                    </Link>
+                    <Link href="/products/portable_loudspeakers" className={style.navLink}>
                         Portable loudspeakers
-                    </a>
-                    <a href="/products/earphones" className={style.navLink}>
+                    </Link>
+                    <Link href="/products/earphones" className={style.navLink}>
                         Earphones
-                    </a>
+                    </Link>
                 </nav>
 
             </aside>
