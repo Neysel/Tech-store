@@ -23,7 +23,7 @@ import Footer from "../footer/footer";
     const [sortOption, setSortOption] = useState<string>("");
     const [shoppingList, setShoppingList] = useState<any[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const itemsPerPage = 8;
+    const itemsPerPage = 9;
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
     const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
     const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -226,9 +226,11 @@ import Footer from "../footer/footer";
             selectedColors={selectedColors}
             setSelectedColors={setSelectedColors}
           />
+          <Link href="https://stock.adobe.com/" target="_blank">
           <div className={style.aside_ads}>
             {/* asdasdds */}
           </div>
+          </Link>
         </div>
           
         

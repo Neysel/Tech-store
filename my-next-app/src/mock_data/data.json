@@ -37,6 +37,299 @@
       "warranty_months": 24
     },
     {
+      "product_id": "ELEC-003",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X300",
+      "brand": "BeatPro",
+      "price": 89.99,
+      "in_stock": true,
+      "image": "/assets/headphones/AdobeStock_1491663300_Preview.jpeg",
+      "description": "Affordable headphones delivering clear sound and comfort, ideal for everyday use and travel.",
+      "specifications": {
+        "color": "Blue",
+        "battery_life_hours": 20,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 12
+    },{
+      "product_id": "HISU-123",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X600",
+      "brand": "SoundWave",
+      "price": 149.99,
+      "in_stock": false,
+      "image": "/assets/headphones/AdobeStock_1526710196_Preview.jpeg",
+      "description": "High-performance headphones with deep bass, noise isolation, and a sleek design for music enthusiasts.",
+      "specifications": {
+        "color": "Black",
+        "battery_life_hours": 25,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 18
+    }, 
+    {
+      "product_id": "HISU-124",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X400",
+      "brand": "SoundWave",
+      "price": 159.99,
+      "in_stock": true,
+      "image": "/assets/headphones/AdobeStock_1592878016_Preview.jpeg",
+      "description": "Versatile headphones with customizable sound settings, long battery life, and a comfortable fit for all-day listening.",
+      "specifications": {
+        "color": "Pink",
+        "battery_life_hours": 35,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 30
+    },
+    {
+      "product_id": "HISU-125",
+      "category": "Headphones",
+      "name": "Headphones Elegance Pro",
+      "brand": "AudioPhile",
+      "price": 249.99,
+      "in_stock": true,
+      "image": "/assets/headphones/AdobeStock_1604467920_Preview.jpeg",
+      "description": "Top-of-the-line headphones with studio-quality sound, advanced noise cancellation, and premium materials for ultimate comfort.",
+      "specifications": {
+        "color": "Pink",
+        "battery_life_hours": 50,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 48
+    },{
+      "product_id": "HISU-126",
+      "category": "Headphones",
+      "name": "Headphones BassMaster 3000",
+      "brand": "BeatPro",
+      "price": 179.99,
+      "in_stock": true,
+      "image": "/assets/headphones/AdobeStock_1608043255_Preview.jpeg",
+      "description": "Powerful headphones designed for bass lovers, featuring enhanced low-frequency response and comfortable ear cushions for extended wear.",
+      "specifications": {
+        "color": "Pink",
+        "battery_life_hours": 45,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 36
+    },{
+      "product_id": "HISU-127",
+      "category": "Headphones",
+      "name": "Headphones CrystalClear HD",
+      "brand": "ClearSound",
+      "price": 139.99,
+      "in_stock": false,
+      "image": "/assets/headphones/AdobeStock_1762381143_Preview.jpeg",
+      "description": "High-definition headphones delivering crystal-clear audio with noise isolation and a sleek, modern design.",
+      "specifications": {
+        "color": "Silver",
+        "battery_life_hours": 30,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 24
+    },{
+      "product_id": "HISU-128",
+      "category": "Headphones",
+      "name": "Headphones SoundSurge 500",
+      "brand": "SoundWave",
+      "price": 129.99,
+      "in_stock": true,
+      "image": "/assets/headphones/alexunder-hess-bWZAPKm0zZE-unsplash.jpg",
+      "description": "Dynamic headphones with powerful sound, noise cancellation, and a comfortable fit for all-day listening pleasure.",
+      "specifications": {
+        "color": "Beige",
+        "battery_life_hours": 28,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-004",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X900",
+      "brand": "ClearSound",
+      "price": 229.99,
+      "in_stock": false,
+      "image": "/assets/headphones/bodega-gNnJ3e7yISE-unsplash.jpg",
+      "description": "Advanced headphones with superior sound clarity, active noise cancellation, and ergonomic design for maximum comfort.",
+      "specifications": {
+        "color": "Blue",
+        "battery_life_hours": 45,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 36
+    },
+    {
+      "product_id": "ELEC-005",
+      "category": "Headphones",
+      "name": "Headphones SoundSurge 700",
+      "brand": "BeatPro",
+      "price": 299.99,
+      "in_stock": true,
+      "image": "/assets/headphones/cosmin-ursea-0QAe85hi_Mw-unsplash.jpg",
+      "description": "Premium headphones with immersive sound experience, advanced noise cancellation, and long-lasting comfort for extended listening sessions.",
+      "specifications": {
+        "color": "Black",
+        "battery_life_hours": 50,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 48
+    },
+    {
+      "product_id": "ELEC-006",
+      "category": "Headphones",
+      "name": "Headphones BassBoost Pro",
+      "brand": "BeatPro",
+      "price": 159.99,
+      "in_stock": true,
+      "image": "/assets/headphones/dev-asangbam-EamFDKZ3FMY-unsplash.jpg",
+      "description": "High-performance headphones with enhanced bass response, noise isolation, and a comfortable design for long listening sessions.",
+      "specifications": {
+        "color": "Black",
+        "battery_life_hours": 30,
+        "noise_cancellation": true,
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-104",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X200",
+      "brand": "Sony",
+      "price": 129.99,
+      "in_stock": true,
+      "image": "/assets/headphones/jesus-eca-zyEMT7CafjQ-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the ELECTRO-X200 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Green",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-101",
+      "category": "Headphones",
+      "name": "Headphones ELECTRO-X200",
+      "brand": "Sony",
+      "price": 129.99,
+      "in_stock": true,
+      "image": "/assets/headphones/kiran-ck-LSNJ-pltdu8-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the ELECTRO-X200 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Grey",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-3124",
+      "category": "Headphones",
+      "name": "Headphones BassMaster 5000",
+      "brand": "Sony",
+      "price": 129.99,
+      "in_stock": true,
+      "image": "/assets/headphones/luke-peterson-lUMj2Zv5HUE-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the BassMaster 5000 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-0012",
+      "category": "Headphones",
+      "name": "Headphones mayra-moretti-EX250",
+      "brand": "Sony",
+      "price": 139.99,
+      "in_stock": true,
+      "image": "/assets/headphones/mayra-moretti-por3FNwFCbs-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the mayra-moretti-EX250 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-0013",
+      "category": "Headphones",
+      "name": "Headphones CrystalClear 250HD",
+      "brand": "Sony",
+      "price": 139.99,
+      "in_stock": true,
+      "image": "/assets/headphones/padmanav-borah-Dwxg6q1GlUc-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the CrystalClear 250HD headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "White",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-0014",
+      "category": "Headphones",
+      "name": "Headphones SoundSurge 600",
+      "brand": "Razor",
+      "price": 139.99,
+      "in_stock": true,
+      "image": "/assets/headphones/pelicular-studio-Z1BBqeQ_2uM-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the SoundSurge 600 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-0015",
+      "category": "Headphones",
+      "name": "Headphones SoundSurge 1000",
+      "brand": "Razor",
+      "price": 149.99,
+      "in_stock": true,
+      "image": "/assets/headphones/qasim-malick-HH-s1g79xX0-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the SoundSurge 1000 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Grey",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "ELEC-0016",
+      "category": "Headphones",
+      "name": "Headphones BassBoost X100",
+      "brand": "BeatPro",
+      "price": 159.99,
+      "in_stock": true,
+      "image": "/assets/headphones/sebastian-banasiewcz-oXXc-s5nNy8-unsplash.jpg",
+      "description": "Experience high-fidelity sound with the BassBoost X100 headphones, featuring noise cancellation and a comfortable design for all-day wear.",
+      "specifications": {
+        "color": "Black",
+        "noise_cancellation": true,
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    },
+    {
       "product_id": "ELEC-002",
       "category": "Headphones",
       "name": "Headphones ELECTRO-X700",
@@ -52,15 +345,254 @@
         "connectivity": ["Bluetooth", "Wire"]
       },
       "warranty_months": 36
+    }, 
+    {
+      "product_id": "Earphones-103",
+      "category": "Earphones",
+      "name": "Earphones StudioPro USB",
+      "brand": "Sony",
+      "price": 89.99,
+      "in_stock": false,
+            "image": "/assets/earphones/AdobeStock_234333768_Preview.jpeg",
+            "description": "The StudioPro USB microphone is ideal for podcasters and home studio enthusiasts, delivering clear audio with easy USB connectivity.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 12
+    }, 
+    {
+      "product_id": "Earphones-104",
+      "category": "Earphones",
+      "name": "Earphones SoundWave TWS",
+      "brand": "SoundWave",
+      "price": 79.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_280363355_Preview.jpeg",
+            "description": "Experience true wireless freedom with the SoundWave TWS earphones, featuring high-quality sound and a comfortable fit for all-day use.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 18
+    }, 
+    {
+      "product_id": "Earphones-105",
+      "category": "Earphones",
+      "name": "Earphones BassBoost Pro",
+      "brand": "BeatPro",
+      "price": 99.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_320622023_Preview.jpeg",
+            "description": "BassBoost Pro earphones deliver deep bass and clear sound, perfect for music lovers who want an immersive listening experience on the go.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 24
+    }, 
+    {
+      "product_id": "Earphones-106",
+      "category": "Earphones",
+      "name": "Earphones CrystalClear HD",
+      "brand": "ClearSound",
+      "price": 119.99,
+      "in_stock": false,
+            "image": "/assets/earphones/AdobeStock_426407908_Preview.jpeg",
+            "description": "CrystalClear HD earphones provide high-definition sound quality with noise isolation, ensuring an exceptional listening experience wherever you go.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 24
+    }, 
+    {
+      "product_id": "Earphones-107",
+      "category": "Earphones",
+      "name": "Earphones SoundSurge 300",
+      "brand": "SoundWave",
+      "price": 89.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_633657287_Preview.jpeg",
+            "description": "SoundSurge 300 earphones offer powerful sound and a comfortable fit, making them perfect for everyday listening and workouts.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 12
+    }, 
+    {
+      "product_id": "Earphones-108",
+      "category": "Earphones",
+      "name": "Earphones EliteSound Pro",
+      "brand": "AudioPhile",
+      "price": 199.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_743435726_Preview.jpeg",
+            "description": "EliteSound Pro earphones deliver studio-quality sound with advanced noise cancellation and a premium design for discerning listeners.",
+      "specifications": {
+        "color": "Blue",
+        "connectivity": ["Bluetooth", "Wire"]
+      },
+      "warranty_months": 36
+    }, 
+    {
+      "product_id": "Earphones-109",
+      "category": "Earphones",
+      "name": "Earphones TWS SportX",
+      "brand": "Sony",
+      "price": 79.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_1600713613_Preview.jpeg",
+            "description": "TWS SportX earphones are designed for active lifestyles, featuring a secure fit, sweat resistance, and high-quality sound for workouts and outdoor activities.",
+      "specifications": {
+        "color": "White",
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 12
+    }, 
+    {
+      "product_id": "Earphones-110",
+      "category": "Earphones",
+      "name": "Earphones SoundWave Pro",
+      "brand": "SoundWave",
+      "price": 99.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_1724457565_Preview.jpeg",
+            "description": "SoundWave Pro earphones offer premium sound quality and a sleek design, perfect for audiophiles who demand the best listening experience.",
+      "specifications": {
+        "color": "White",
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    }, 
+    {
+      "product_id": "Earphones-111",
+      "category": "Earphones",
+      "name": "Earphones BassMaster TWS",
+      "brand": "BeatPro",
+      "price": 129.99,
+      "in_stock": false,
+            "image": "/assets/earphones/AdobeStock_1733811218_Preview.jpeg",
+            "description": "BassMaster TWS earphones deliver powerful bass and clear sound in a true wireless design, perfect for music lovers on the go.",
+      "specifications": {
+        "color": "White",
+        "connectivity": ["Bluetooth"]
+      },
+      "warranty_months": 24
+    }, 
+    {
+      "product_id": "Earphones-112",
+      "category": "Earphones",
+      "name": "Earphones CrystalSound HD",
+      "brand": "ClearSound",
+      "price": 149.99,
+      "in_stock": true,
+            "image": "/assets/earphones/AdobeStock_1778761909_Preview.jpeg",
+            "description": "CrystalSound HD earphones provide exceptional audio clarity with noise isolation and a comfortable fit for extended listening sessions.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 30
     },
     {
+      "product_id": "Earphones-113",
+      "category": "Earphones",
+      "name": "Earphones SoundSurge Elite",
+      "brand": "JBL",
+      "price": 179.99,
+      "in_stock": true,
+            "image": "/assets/earphones/kiran-ck-cJ8YB0InG6k-unsplash.jpg",
+            "description": "SoundSurge Elite earphones offer premium sound quality, advanced noise cancellation, and a stylish design for discerning listeners.",
+      "specifications": {
+        "color": "Silver",
+        "connectivity": [ "Wire"]
+      },
+      "warranty_months": 36
+    },
+    {
+      "product_id": "Microphone_stand-114",
+      "category": "microphone_stands",
+      "name": "Microphone Stand EliteBass Pro",
+      "brand": "AudioPhile",
+      "price": 59.99,
+      "in_stock": true,
+            "image": "/assets/microphone%20stands/AdobeStock_1504282965_Preview.jpeg",
+            "description": "EliteBass Pro Microphone Stand offers sturdy support and adjustable height, perfect for professional vocal recordings and live performances.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["Wire"]
+      },
+      "warranty_months": 24
+    }, {
+      "product_id": "Microphone_stand-115",
+      "category": "microphone_stands",
+      "name": "Microphone Stand SoundMaster XLR",
+      "brand": "SoundMaster",
+      "price": 69.99,
+      "in_stock": true,
+            "image": "/assets/microphone%20stands/AdobeStock_1510236570_Preview.jpeg",
+            "description": "The SoundMaster XLR Microphone Stand offers reliable support and easy adjustability, ideal for studio recordings and live performances.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": [""]
+      },
+      "warranty_months": 18
+    }, 
+    {
+      "product_id": "Microphone_stand-116",
+      "category": "microphone_stands",
+      "name": "Microphone Stand StudioPro USB",
+      "brand": "Sony",
+      "price": 19.99,
+      "in_stock": true,
+            "image": "/assets/microphone%20stands/AdobeStock_1547920440_Preview.jpeg",
+            "description": "The StudioPro USB Microphone Stand is perfect for podcasters and home studio enthusiasts, providing stable support for USB microphones.",
+      "specifications": {
+        "color": "Silver",
+        "connectivity": [""]
+      },
+      "warranty_months": 12
+    }, 
+    {
+      "product_id": "Microphone_stand-117",
+      "category": "microphone_stands",
+      "name": "Microphone Stand BassBoost Pro",
+      "brand": "BeatPro",
+      "price": 49.99,
+      "in_stock": true,
+            "image": "/assets/microphone%20stands/AdobeStock_1574601228_Preview.jpeg",
+            "description": "BassBoost Pro Microphone Stand provides sturdy support and adjustable height, perfect for music lovers who want an immersive listening experience on the go.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": [""]
+      },
+      "warranty_months": 24
+    }, 
+    {
+      "product_id": "Microphone_stand-118",
+      "category": "microphone_stands",
+      "name": "Microphone Stand CrystalClear HD",
+      "brand": "ClearSound",
+      "price": 59.99,
+      "in_stock": true,
+            "image": "/assets/microphone%20stands/AdobeStock_1600507274_Preview.jpeg",
+            "description": "CrystalClear HD Microphone Stand provides reliable support and easy adjustability, ensuring an exceptional listening experience wherever you go.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": [""]
+      },
+      "warranty_months": 18
+    },
+       {
       "product_id": "MOB-101",
       "category": "Microphones",
       "name": "Microphone PRO-Vocal bluety",
       "brand": "Nature's Best",
       "price": 105.99,
       "in_stock": true,
-            "image": "",
+            "image": "/assets/microphones/AdobeStock_112994908_Preview.jpeg",
             "description": "Capture crystal-clear audio with the PRO-Vocal bluety microphone, designed for professional vocal recordings and live performances.",
       "specifications": {
         "color": "Black",
@@ -75,13 +607,115 @@
       "brand": "SoundMaster",
       "price": 150.00,
       "in_stock": true,
-            "image": "",
+            "image": "/assets/microphones/AdobeStock_167318383_Preview.jpeg",
             "description": "The PRO-Vocal XLR microphone offers superior sound quality and durability, perfect for studio recordings and live performances.",
       "specifications": {
-        "color": "Silver",
-        "connectivity": ["XLR"]
+        "color": "Black",
+        "noise_cancellation": true
+      },
+      "warranty_months": 36
+    }, 
+    {
+      "product_id": "MOB-103",
+      "category": "Microphones",
+      "name": "Microphone PRO-Vocal USB",
+      "brand": "Sony",
+      "price": 89.99,
+      "in_stock": true,
+            "image": "/assets/microphones/AdobeStock_534944597_Preview.jpeg",
+            "description": "The PRO-Vocal USB microphone is ideal for podcasters and home studio enthusiasts, delivering clear audio with easy USB connectivity.",
+      "specifications": {
+        "color": "Black",
+         "noise_cancellation": true,
+        "connectivity": ["USB"]
+      },
+      "warranty_months": 12
+    }, 
+    {
+      "product_id": "MOB-104",
+      "category": "Microphones",
+      "name": "Microphone PRO-Vocal",
+      "brand": "BeatPro",
+      "price": 199.99,
+      "in_stock": true,
+            "image": "/assets/microphones/AdobeStock_587349724_Preview.jpeg",
+            "description": "The PRO-Vocal Wireless microphone offers freedom of movement with high-quality sound, perfect for live performances and presentations.",
+      "specifications": {
+        "color": "Black",
+        "connectivity": ["USB"]
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "loadspeaker-105",
+      "category": "portable_loudspeakers",
+      "name": "Loadspeaker PRO-Vocal Elite",
+      "brand": "AudioPhile",
+      "price": 249.99,
+      "in_stock": true,
+            "image": "/assets/portable%20loudspeaker/AdobeStock_164376403_Preview.jpeg",
+            "description": "The PRO-Vocal Elite loudspeaker delivers studio-quality sound with deep bass and clear highs, perfect for music enthusiasts.",
+      "specifications": {
+        "color": "Black"
+      },
+      "warranty_months": 48
+    },
+    {
+      "product_id": "loadspeaker-106",
+      "category": "portable_loudspeakers",
+      "name": "Loadspeaker SoundWave Max",
+      "brand": "SoundWave",
+      "price": 199.99,
+      "in_stock": true,
+            "image": "/assets/portable%20loudspeaker/AdobeStock_330372162_Preview.jpeg",
+            "description": "The SoundWave Max loudspeaker offers powerful sound and portability, making it perfect for outdoor gatherings and parties.",
+      "specifications": {
+        "color": "White"
+      },
+      "warranty_months": 36
+    },
+    {
+      "product_id": "loadspeaker-107",
+      "category": "portable_loudspeakers",
+      "name": "Loadspeaker BassBoost Pro",
+      "brand": "BeatPro",
+      "price": 149.99,
+      "in_stock": true,
+            "image": "/assets/portable%20loudspeaker/AdobeStock_432872369_Preview.jpeg",
+            "description": "BassBoost Pro loudspeaker delivers deep bass and clear sound, perfect for music lovers who want an immersive listening experience on the go.",
+      "specifications": {
+        "color": "Black"
+      },
+      "warranty_months": 24
+    },
+    {
+      "product_id": "loadspeaker-108",
+      "category": "portable_loudspeakers",
+      "name": "Loadspeaker CrystalClear HD",
+      "brand": "ClearSound",
+      "price": 179.99,
+      "in_stock": false,
+            "image": "/assets/portable%20loudspeaker/AdobeStock_828481443_Preview.jpeg",
+            "description": "CrystalClear HD loudspeaker provides high-definition sound quality with noise isolation, ensuring an exceptional listening experience wherever you go.",
+      "specifications": {
+        "color": "Black"
+      },
+      "warranty_months": 30
+    },
+    {
+      "product_id": "loadspeaker-109",
+      "category": "portable_loudspeakers",
+      "name": "Loadspeaker SoundSurge 500",
+      "brand": "JBL",
+      "price": 219.99,
+      "in_stock": true,
+            "image": "/assets/portable%20loudspeaker/AdobeStock_1535435227_Preview.jpeg",
+            "description": "SoundSurge 500 loudspeaker offers premium sound quality, advanced noise cancellation, and a stylish design for discerning listeners.",
+      "specifications": {
+        "color": "Black"
       },
       "warranty_months": 36
     }
+
   ]
 }

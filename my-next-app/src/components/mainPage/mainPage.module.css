@@ -533,4 +533,7 @@
   width: auto;
   min-width: 300px;
 }
+.categoryTitle {
+  font-size: x-large;
+}
 }
