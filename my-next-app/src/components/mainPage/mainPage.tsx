@@ -170,10 +170,12 @@ const MainPage = () => {
                     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 ${style.cyberpunkAd_wrapper}`}>
 
                         {/* first part */}
+                        <div>
                          <Link href="https://www.youtube.com/" target="_blank">
                         <div className={style.image_podcast_ad}>                            
                         </div>
                         </Link>
+                        </div>
 
                         {/* second part */}
                          <div className={style.image_empty_ad}>                            
