@@ -175,7 +175,7 @@
     }
     
     .user_links {
-        gap: 8px;
+        gap: 2px;
     }
     
     .header_btn_blue {
@@ -187,8 +187,8 @@
     }
     
     .header_btn_cart {
-        width: 80px;
-        height: 34px;
+        width: 110px;
+        height: 48px;
         font-size: 14px;
     }
     
