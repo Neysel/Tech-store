@@ -121,7 +121,7 @@ export const Footer = () => {
                             <p className={`text-gray-300 mb-6 text-sm ${style.newsletter_text}`}>
                                 Subscribe for cyber updates and neural offers
                             </p>
-                            <div className="space-y-4">
+                            <div className={`space-y-4 ${style.newsletter_section}`}>
                                 <div className={`relative group ${style.newsletter_text_email_input_wrapper}`}>
                                     <input 
                                         type="email" 
@@ -160,7 +160,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className="border-t border-gray-800 pt-8 mt-8 relative">
+                    <div className={`${style.bottom_bar} border-t border-gray-800 pt-8 mt-8 relative`}>
                         {/* Glowing bar effect */}
                         <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
                         
