@@ -21,7 +21,7 @@ const Basket = () => {
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
       dispatch(removeFromCart({ id, userId: currentUser?.user_id }));
-    } else {
+    } else { 
       dispatch(updateQuantity({ id, quantity: newQuantity, userId: currentUser?.user_id  }));
     }
   };

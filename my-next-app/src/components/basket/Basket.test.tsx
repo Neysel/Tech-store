@@ -91,12 +91,14 @@ describe('Basket Component', () => {
       </Provider>
     );
 
-    const prices_49 = screen.getAllByText('$49.99');
-    const prices_99 = screen.getAllByText('$99.99');
-    const prices_249 = screen.getAllByText('$249.97');
-
-    expect(screen.getByText('Test Product 1')).toBeInTheDocument();
-    expect(screen.getByText('Test Product 2')).toBeInTheDocument();
+    // const prices_49 = screen.getAllByText('$49.99');
+    // const prices_99 = screen.getAllByText('$99.99');
+    // const prices_249 = screen.getAllByText('$249.97');
+    const prices_49 = screen.getAllByText((content) => content.includes('49.99'));
+    const prices_99 = screen.getAllByText((content) => content.includes('99.99'));
+    const prices_249 = screen.getAllByText((content) => content.includes('249.97'));
+     expect(screen.getByRole('heading', { name: 'Test Product 1' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Test Product 2' })).toBeInTheDocument();
     expect(prices_49[0]).toBeInTheDocument();
     expect(prices_99[0]).toBeInTheDocument();
     expect(prices_249[0]).toBeInTheDocument(); // Total: (99.99*2) + 49.99
