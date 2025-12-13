@@ -100,7 +100,7 @@ const cartSlice = createSlice({
       // Get user's existing cart
       const userCart = localStorageUtil.getCart(userId) || { items: [], total: 0 };
       
-      console.log('Merging carts - Guest:', guestCart, 'User:', userCart);
+      // console.log('Merging carts - Guest:', guestCart, 'User:', userCart);
       
       // Create a map to track items by product ID for efficient merging
       const itemsMap = new Map<string, CartItem>();
@@ -137,7 +137,7 @@ const cartSlice = createSlice({
       // Clear guest cart after successful merge
       localStorageUtil.clearCart();
       
-      console.log('Merged cart result:', { items: mergedItems, total: mergedTotal });
+      // console.log('Merged cart result:', { items: mergedItems, total: mergedTotal });
     },
   switchUserCart: (state, action: PayloadAction<{ fromUserId?: string; toUserId?: string }>) => {
       const { fromUserId, toUserId } = action.payload;
@@ -153,7 +153,7 @@ const cartSlice = createSlice({
       state.items = newCart.items;
       state.total = newCart.total;
       
-      console.log(`Switched cart - From: ${fromUserId || 'guest'}, To: ${toUserId || 'guest'}`);
+      // console.log(`Switched cart - From: ${fromUserId || 'guest'}, To: ${toUserId || 'guest'}`);
     }
   },
 });

@@ -9,7 +9,7 @@ export const localStorageUtil = {
         const item = localStorage.getItem(key);
         return item ? JSON.parse(item) : null;
       } catch (error) {
-        console.error('Error parsing localStorage item:', error);
+        // console.error('Error parsing localStorage item:', error);
         return null;
       }
     }
@@ -21,7 +21,7 @@ export const localStorageUtil = {
       try {
         localStorage.setItem(key, JSON.stringify(value));
       } catch (error) {
-        console.error('Error setting localStorage item:', error);
+        // console.error('Error setting localStorage item:', error);
       }
     }
   },
@@ -36,19 +36,19 @@ export const localStorageUtil = {
   getCart: (userId?: string) => {
     const key = localStorageUtil.getCartKey(userId);
     const cart = localStorageUtil.getItem(key);
-    console.log(`Getting cart for ${userId || 'guest'}:`, cart);
+    // console.log(`Getting cart for ${userId || 'guest'}:`, cart);
     return cart || { items: [], total: 0 }; // Return default if null
   },
 
   setCart: (cartData: any, userId?: string) => {
     const key = localStorageUtil.getCartKey(userId);
-    console.log(`Setting cart for ${userId || 'guest'}:`, cartData);
+    // console.log(`Setting cart for ${userId || 'guest'}:`, cartData);
     localStorageUtil.setItem(key, cartData);
   },
 
   clearCart: (userId?: string) => {
     const key = localStorageUtil.getCartKey(userId);
-    console.log(`Clearing cart for ${userId || 'guest'}`);
+    // console.log(`Clearing cart for ${userId || 'guest'}`);
     localStorageUtil.removeItem(key);
   }
 };

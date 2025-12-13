@@ -9,7 +9,7 @@ export default function CartIcon() {
   const { items, total } = useAppSelector((state) => state.cart);
   const itemCount = items.reduce((total, item) => total + item.quantity, 0);
 
-  console.log('CartIcon - Items:', items, 'Total items:', itemCount);
+  // console.log('CartIcon - Items:', items, 'Total items:', itemCount);
 
   return (
     <div  className={`relative rounded-lg`}>

@@ -81,7 +81,7 @@ const Login = () => {
         if (status === 'loading') return; // Wait for NextAuth to load
         
         if (isLoggedIn || session) {
-            console.log('Redirecting because:', { isLoggedIn, hasSession: !!session });
+            // console.log('Redirecting because:', { isLoggedIn, hasSession: !!session });
             router.push('/products/all_products');
         }
     }, [isLoggedIn, session, status, router]); // Added status dependency
@@ -108,7 +108,7 @@ const Login = () => {
             return;
         }
 
-        console.log('Submitting form', formData);
+        // console.log('Submitting form', formData);
         dispatch(clearError());
         dispatch(loginUser(formData));
     }

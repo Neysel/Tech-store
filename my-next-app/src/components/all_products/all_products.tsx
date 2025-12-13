@@ -41,7 +41,7 @@ import Footer from "../footer/footer";
         try {
             const productsData = await fetchProducts();
 
-            console.log("Fetched products data:", productsData);
+            // console.log("Fetched products data:", productsData);
 
             setProducts(productsData);
             setFilteredProducts(productsData);
@@ -53,7 +53,7 @@ import Footer from "../footer/footer";
           setPriceRange([minPrice, maxPrice]);
         }
 
-             console.log("products", products);
+            //  console.log("products", products);
         } catch (err: any) {
             setError(err.message);
         }

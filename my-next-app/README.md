@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## DEPLOYED SITE
+
+LINK: placeholder
+
 ## Getting Started
 
 First, run the development server:
@@ -13,12 +17,22 @@ pnpm dev
 # or
 bun dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## INFORMATION 
+
+This is my own store project, I created it like a test project. Previous similar site contained token functionality and it was connected with different servers, but this time I decided to create a demostration project because all the previous servers and previous data all gone
+It contains mock data. 
+
+Also the project has test, to run it - type "npm run test"
+
+And you can see the deployed link on the right side and above this section
+
+
 
 ## Learn More
 

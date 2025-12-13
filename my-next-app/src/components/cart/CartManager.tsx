@@ -13,10 +13,10 @@ export default function CartManager() {
   // Load appropriate cart on component mount
   useEffect(() => {
     if (isLoggedIn && currentUser) {
-      console.log('CartManager: Loading user cart for', currentUser.user_id);
+      // console.log('CartManager: Loading user cart for', currentUser.user_id);
       dispatch(loadCart({ userId: currentUser.user_id }));
     } else {
-      console.log('CartManager: Loading guest cart');
+      // console.log('CartManager: Loading guest cart');
       dispatch(loadCart({}));
     }
   }, []);
@@ -25,12 +25,12 @@ export default function CartManager() {
   useEffect(() => {
     // User just logged in
     if (isLoggedIn && currentUser && !prevIsLoggedIn.current) {
-      console.log('CartManager: User logged in, merging carts for', currentUser.user_id);
+      // console.log('CartManager: User logged in, merging carts for', currentUser.user_id);
       dispatch(mergeCarts({ userId: currentUser.user_id }));
     }
     // User just logged out
     else if (!isLoggedIn && prevIsLoggedIn.current && prevUserId.current) {
-      console.log('CartManager: User logged out, switching to guest cart');
+      // console.log('CartManager: User logged out, switching to guest cart');
       dispatch(switchUserCart({ 
         fromUserId: prevUserId.current, 
         toUserId: undefined 
