@@ -25,10 +25,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 set up google authentication, add .env.local into this folder with the following keys : 
 
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET
+-GOOGLE_CLIENT_ID
+-GOOGLE_CLIENT_SECRET
+-NEXTAUTH_URL=http://localhost:3000
+-NEXTAUTH_SECRET
 
 ## INFORMATION 
 
