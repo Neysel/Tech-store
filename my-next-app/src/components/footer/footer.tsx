@@ -150,28 +150,32 @@ export const Footer = () => {
                                         
                                         <a
                                             key={1}
-                                            href="twitter.com"
+                                            href="https://twitter.com"
+                                            target='_blank'
                                             className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-cyan-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
                                         >
                                             <FaTwitter />
                                         </a>
                                                                                 <a
                                             key={2}
-                                            href="instagram.com"
+                                            href="https://instagram.com"
+                                            target='_blank'
                                             className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-purple-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
                                         >
                                             <FaInstagram />
                                         </a>
                                                                                 <a
                                             key={3}
-                                            href="facebook.com"
+                                            target='_blank'
+                                            href="https://facebook.com"
                                             className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-blue-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
                                         >
                                             <FaFacebookF />
                                         </a>
                                                                                 <a
                                             key={4}
-                                            href="youtube.com"
+                                            target='_blank'
+                                            href="https://youtube.com"
                                             className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-red-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
                                         >
                                             <FaYoutube />
@@ -189,7 +193,7 @@ export const Footer = () => {
                         
                         <div className={`flex flex-col md:flex-row justify-between items-center ${style.bottom_bar}`}>
                             <p className="text-gray-400 text-sm">
-                                &copy; 2077 Techero Sound. All neural rights reserved.
+                                &copy; 2077 Techero Sound. All rights reserved.
                             </p>
                             
                             <div className="flex space-x-6 mt-4 md:mt-0 gap-4">

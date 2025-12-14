@@ -195,22 +195,22 @@ const Contacts = () => {
             <p className={style.socialText}>Join our neural network across cyberspace</p>
             
             <div className={style.socialIcons}>
-              <a href="#" className={style.socialLink}>
+              <a href="https://twitter.com" target='_blank' className={style.socialLink}>
                 <FaTwitter />
                 <span>Twitter</span>
               </a>
               
-              <a href="#" className={style.socialLink}>
+              <a href="https://instagram.com" target='_blank' className={style.socialLink}>
                 <FaInstagram />
                 <span>Instagram</span>
               </a>
               
-              <a href="#" className={style.socialLink}>
+              <a href="https://facebook.com" target='_blank' className={style.socialLink}>
                 <FaFacebookF />
                 <span>Facebook</span>
               </a>
               
-              <a href="#" className={style.socialLink}>
+              <a href="https://youtube.com" target='_blank' className={style.socialLink}>
                 <FaYoutube />
                 <span>YouTube</span>
               </a>
