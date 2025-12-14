@@ -25,10 +25,9 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## INFORMATION 
 
-This is my own store project, I created it like a test project. Previous similar site contained token functionality and it was connected with different servers, but this time I decided to create a demostration project because all the previous servers and previous data all gone
-It contains mock data. 
+This is my own store project, I created it like a test project. Previous similar site contained token functionality and it was connected with different servers, but this time I decided to create a demostration project because all the previous servers and previous data all gone. This project contains a lot of mock data. 
 
-Also the project has test, to run it - type "npm run test"
+Also the project has tests, to run it - type "npm run test"
 
 And you can see the deployed link on the right side and above this section
 
