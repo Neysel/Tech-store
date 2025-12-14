@@ -3,8 +3,12 @@
   width: 100%;
   background: #0a0a0a;
   color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.homePage body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Hero Section - Cyberpunk Style */

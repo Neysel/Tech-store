@@ -254,8 +254,11 @@ const ProfilePage = () => {
                     <div className={style.quickActions}>
                         {/* <h3>⚡ Quick Actions</h3> */}
                     </div>
+                    <a href='https://stock.adobe.com/' target='_blank'>
                     <div className={style.sidemenu_ads}>
                     </div>
+                    </a>
+
                 </aside>
             </div>
             <Footer />
