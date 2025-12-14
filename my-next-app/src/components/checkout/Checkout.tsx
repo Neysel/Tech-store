@@ -181,6 +181,9 @@ const CheckoutPage = () => {
               <div className={ style.card}>
                 <h3 className={ style.cardTitle}>Payment Method</h3>
                 <div className={ style.paymentMethods}>
+                
+                
+                <label htmlFor="card" className={ style.paymentLabel}>
                   <div className={ style.paymentOption}>
                     <input
                       type="radio"
@@ -189,10 +192,11 @@ const CheckoutPage = () => {
                       defaultChecked
                       className={ style.radio}
                     />
-                    <label htmlFor="card" className={ style.paymentLabel}>
-                      Credit/Debit Card
-                    </label>
+              Credit/Debit Card
                   </div>
+                  </label>
+
+                  <label htmlFor="paypal" className={ style.paymentLabel}>
                   <div className={ style.paymentOption}>
                     <input
                       type="radio"
@@ -200,10 +204,11 @@ const CheckoutPage = () => {
                       name="payment"
                       className={ style.radio}
                     />
-                    <label htmlFor="paypal" className={ style.paymentLabel}>
+                   
                       PayPal
-                    </label>
+                    
                   </div>
+                  </label>
                 </div>
               </div>
             </div>
