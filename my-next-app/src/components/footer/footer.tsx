@@ -140,20 +140,43 @@ export const Footer = () => {
                             <div className="mt-8">
                                 <h5 className="font-semibold text-gray-300 mb-4">CONNECT WITH US</h5>
                                 <div className={`flex space-x-4 ${style.social_links}`}>
+                                {/* 
                                     {[
                                         { icon: FaTwitter, color: "hover:text-cyan-400" },
                                         { icon: FaInstagram, color: "hover:text-purple-400" },
                                         { icon: FaFacebookF, color: "hover:text-blue-400" },
                                         { icon: FaYoutube, color: "hover:text-red-400" }
-                                    ].map((SocialIcon, index) => (
+                                    ].map((SocialIcon, index) => ( */}
+                                        
                                         <a
-                                            key={index}
-                                            href="#"
-                                            className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${SocialIcon.color} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
+                                            key={1}
+                                            href="twitter.com"
+                                            className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-cyan-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
                                         >
-                                            <SocialIcon.icon />
+                                            <FaTwitter />
                                         </a>
-                                    ))}
+                                                                                <a
+                                            key={2}
+                                            href="instagram.com"
+                                            className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-purple-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
+                                        >
+                                            <FaInstagram />
+                                        </a>
+                                                                                <a
+                                            key={3}
+                                            href="facebook.com"
+                                            className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-blue-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
+                                        >
+                                            <FaFacebookF />
+                                        </a>
+                                                                                <a
+                                            key={4}
+                                            href="youtube.com"
+                                            className={`w-10 h-10 rounded-lg bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 ${"hover:text-red-400"} transition-all duration-300 hover:border-cyan-500/50 hover:scale-110`}
+                                        >
+                                            <FaYoutube />
+                                        </a>
+                                    {/* ))} */}
                                 </div>
                             </div>
                         </div>
