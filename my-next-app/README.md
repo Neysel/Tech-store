@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## DEPLOYED SITE
 
-LINK: placeholder
+LINK: [tech-store](https://tech-store-wheat-alpha.vercel.app/)
 
 ## Getting Started
 
